@@ -6,72 +6,123 @@
 <title>Spain Itinerary 2026</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Georgia','PingFang SC','Microsoft YaHei',serif;background:#F5F0E8;color:#1a1a2e;line-height:1.7;padding:16px;font-size:15px}
+body{font-family:'Georgia','PingFang SC','Microsoft YaHei',serif;background:#F5F0E8;color:#1a1a2e;line-height:1.6;padding:10px;font-size:15px}
 a{color:#8B6914;text-decoration:none;font-weight:600;letter-spacing:.3px}
 a:hover{color:#FF6E00;text-decoration:underline}
 .wrap{max-width:1000px;margin:0 auto}
 
-.banner{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d4a 40%,#3D2B1F 100%);color:#F5F0E8;border-radius:12px;padding:38px 24px;text-align:center;margin-bottom:20px;box-shadow:0 8px 32px rgba(26,26,46,.25);border:1px solid #C5A572}
-.banner h1{font-size:2.2rem;letter-spacing:3px;margin-bottom:8px;font-weight:700;color:#F5F0E8;text-transform:uppercase}
-.banner .sub{font-size:1rem;color:#C5A572;font-weight:600;letter-spacing:1px}
-.banner .tags{margin-top:16px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.banner .tags span{background:rgba(197,165,114,.15);padding:6px 18px;border-radius:4px;font-size:.82rem;font-weight:600;color:#C5A572;border:1px solid rgba(197,165,114,.3);letter-spacing:.5px}
+.banner{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d4a 40%,#3D2B1F 100%);color:#F5F0E8;border-radius:10px;padding:22px 18px;text-align:center;margin-bottom:10px;box-shadow:0 6px 24px rgba(26,26,46,.25);border:1px solid #C5A572}
+.banner h1{font-size:1.7rem;letter-spacing:3px;margin-bottom:4px;font-weight:700;color:#F5F0E8;text-transform:uppercase}
+.banner .sub{font-size:.88rem;color:#C5A572;font-weight:600;letter-spacing:1px}
+.banner .tags{margin-top:8px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
+.banner .tags span{background:rgba(197,165,114,.15);padding:4px 12px;border-radius:4px;font-size:.74rem;font-weight:600;color:#C5A572;border:1px solid rgba(197,165,114,.3);letter-spacing:.5px}
 
-.nav{display:flex;gap:0;margin-bottom:22px;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1)}
-.nav a{flex:1;text-align:center;padding:14px 8px;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .25s;position:relative;text-decoration:none;letter-spacing:.5px}
-.nav a:hover{filter:brightness(1.08);text-decoration:none}
-.nav a .cn{font-size:.76rem;font-weight:600;opacity:.85;display:block;margin-top:3px}
-.nav a .arrow{position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;display:none}
-.nav a.active .arrow{display:block}
+/* Sticky Tab Navigation */
+.tabs{display:flex;position:sticky;top:0;z-index:100;box-shadow:0 4px 16px rgba(0,0,0,.12);border-radius:8px;overflow:hidden;margin-bottom:10px}
+.tab{flex:1;text-align:center;padding:12px 6px;font-size:.82rem;font-weight:700;cursor:pointer;transition:all .25s;position:relative;text-decoration:none;letter-spacing:.5px;border:none;outline:none;font-family:inherit}
+.tab .cn{font-size:.68rem;font-weight:600;opacity:.85;display:block;margin-top:2px}
+.tab:hover{filter:brightness(1.1)}
+.tab.active{filter:brightness(1.15)}
+.tab.active::after{content:'';position:absolute;bottom:0;left:15%;right:15%;height:3px;background:rgba(255,255,255,.7);border-radius:2px}
 
-.sec{margin-bottom:28px;scroll-margin-top:16px}
-.sec-bar{display:flex;align-items:center;gap:10px;padding:13px 22px;border-radius:8px 8px 0 0;color:#F5F0E8;font-weight:700;font-size:1.05rem;letter-spacing:1px}
-.sec-bar .cn{font-size:.85rem;font-weight:500;opacity:.9}
-.sec-body{background:#FFFCF7;border-radius:0 0 10px 10px;overflow:hidden;box-shadow:0 2px 16px rgba(61,43,31,.08);border:1px solid #E8DFD3;border-top:none}
+/* Tab content panels */
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-.card{padding:20px 22px;border-bottom:1px solid #E8DFD3;transition:background .25s}
+.sec{margin-bottom:12px}
+.sec-bar{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px 8px 0 0;color:#F5F0E8;font-weight:700;font-size:.95rem;letter-spacing:1px}
+.sec-bar .cn{font-size:.78rem;font-weight:500;opacity:.9}
+.sec-body{background:#FFFCF7;border-radius:0 0 8px 8px;overflow:hidden;box-shadow:0 2px 12px rgba(61,43,31,.08);border:1px solid #E8DFD3;border-top:none}
+
+.card{padding:14px 16px;border-bottom:1px solid #E8DFD3;transition:all .2s;position:relative}
 .card:last-child{border-bottom:none}
 .card:hover{background:#FAF6F0}
+.card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:transparent;transition:background .2s}
+.card:hover::before{background:#C5A572}
 
-.card-top{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
-.dt{font-weight:700;font-size:1.05rem;padding:5px 16px;border-radius:6px;letter-spacing:.5px}
-.wb{font-size:.85rem;color:#F5F0E8;padding:4px 14px;border-radius:4px;font-weight:600;display:inline-flex;align-items:center;gap:5px}
+.card-top{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.dt{font-weight:700;font-size:.92rem;padding:4px 12px;border-radius:5px;letter-spacing:.5px}
+.wb{font-size:.76rem;color:#F5F0E8;padding:3px 10px;border-radius:4px;font-weight:600;display:inline-flex;align-items:center;gap:4px}
 
-.grid{display:grid;grid-template-columns:1.5fr 1fr 1.1fr;gap:20px}
-.col-h{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;color:#3D2B1F;font-weight:800;margin-bottom:8px;padding-bottom:5px;border-bottom:2px solid #C5A572}
+.grid{display:grid;grid-template-columns:1.5fr 1fr 1.1fr;gap:14px}
+.col-h{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#3D2B1F;font-weight:800;margin-bottom:6px;padding-bottom:4px;border-bottom:2px solid #C5A572}
 
 .tl{position:relative;padding-left:0}
-.tl-item{display:flex;gap:10px;align-items:flex-start;padding:6px 4px;font-size:.88rem;transition:background .2s;border-radius:6px}
+.tl::before{content:'';position:absolute;left:49px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#E8DFD3,#C5A572,#E8DFD3);border-radius:1px}
+.tl-item{display:flex;gap:8px;align-items:flex-start;padding:3px 4px;font-size:.84rem;transition:background .2s;border-radius:5px;position:relative;z-index:1}
 .tl-item:hover{background:#FAF6F0}
-.tl-time{width:46px;flex-shrink:0;font-weight:700;font-size:.78rem;color:#3D2B1F;text-align:right;padding-top:2px;font-variant-numeric:tabular-nums}
-.tl-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:6px;border:2px solid #FFFCF7;box-shadow:0 0 0 2px #C5A572;transition:box-shadow .2s}
-.tl-item:hover .tl-dot{box-shadow:0 0 0 3px #C5A572,0 0 10px rgba(255,110,0,.3)}
-.tl-txt{flex:1;color:#1a1a2e;line-height:1.65;font-size:.86rem}
+.tl-time{width:42px;flex-shrink:0;font-weight:700;font-size:.74rem;color:#3D2B1F;text-align:right;padding-top:2px;font-variant-numeric:tabular-nums}
+.tl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px;border:2px solid #FFFCF7;box-shadow:0 0 0 2px #C5A572;transition:all .2s}
+.tl-item:hover .tl-dot{box-shadow:0 0 0 3px #C5A572,0 0 8px rgba(255,110,0,.3);transform:scale(1.3)}
+.tl-txt{flex:1;color:#1a1a2e;line-height:1.55;font-size:.82rem}
 
-.w-note{background:#F5F0E8;border-left:3px solid #C5A572;border-radius:4px;padding:6px 12px;margin-top:10px;font-size:.8rem;color:#3D2B1F;display:flex;gap:6px;align-items:flex-start;font-weight:500}
+.w-note{background:#F5F0E8;border-left:3px solid #C5A572;border-radius:4px;padding:4px 10px;margin-top:6px;font-size:.74rem;color:#3D2B1F;display:flex;gap:5px;align-items:flex-start;font-weight:500}
 
-.tc,.hc{font-size:.86rem;line-height:1.75;color:#1a1a2e}
+.tc,.hc{font-size:.82rem;line-height:1.6;color:#1a1a2e}
 .tc strong,.hc strong{color:#8B6914}
 
-.box{border-radius:6px;padding:10px 12px;margin-top:10px}
+.box{border-radius:5px;padding:8px 10px;margin-top:8px}
 .tk{background:#FFF8EE;border:1.5px solid #C5A572}
-.tk-h{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:#8B6914;font-weight:800;margin-bottom:6px}
-.tk-item{font-size:.82rem;margin-bottom:6px;line-height:1.4;color:#1a1a2e}
-.tk-item a{font-weight:700;color:#8B6914}
-.tk-note{font-size:.78rem;color:#6B5530;padding-left:16px;margin-top:2px}
+.tk-h{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#8B6914;font-weight:800;margin-bottom:4px;display:flex;align-items:center;gap:4px}
+.tk-item{font-size:.78rem;margin-bottom:4px;line-height:1.35;color:#1a1a2e}
+.tk-item a{font-weight:700;color:#8B6914;display:inline-block;padding:2px 8px;background:rgba(197,165,114,.12);border-radius:3px;transition:all .2s}
+.tk-item a:hover{background:#C5A572;color:#FFFCF7}
+.tk-note{font-size:.74rem;color:#6B5530;padding-left:14px;margin-top:2px}
 .tp{background:#F5F0E8;border:1.5px solid #3D2B1F}
-.tp-h{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:#3D2B1F;font-weight:800;margin-bottom:6px}
-.tp-item{font-size:.8rem;color:#3D2B1F;line-height:1.5;padding-left:14px;position:relative;margin-bottom:4px;font-weight:500}
-.tp-item::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:#C5A572}
+.tp-h{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#3D2B1F;font-weight:800;margin-bottom:4px;display:flex;align-items:center;gap:4px}
+.tp-item{font-size:.76rem;color:#3D2B1F;line-height:1.45;padding-left:13px;position:relative;margin-bottom:3px;font-weight:500}
+.tp-item::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:#C5A572}
 
-/* Phase colors: Orange/Deep Navy/Gold/Brown - nav text uses dark ink for contrast on orange/gold, light cream on navy/brown */
-.p0 .dt{color:#1a1a2e;background:#FF6E00}.p0 .sec-bar{background:#FF6E00}.p0 .tl-dot{background:#FF6E00}.p0 .wb{background:#FF6E00}.p0 .nav-tab{background:#FF6E00;color:#1a1a2e}
-.p1 .dt{color:#F5F0E8;background:#1a1a2e}.p1 .sec-bar{background:#1a1a2e}.p1 .tl-dot{background:#1a1a2e}.p1 .wb{background:#1a1a2e}.p1 .nav-tab{background:#1a1a2e;color:#F5F0E8}
-.p2 .dt{color:#1a1a2e;background:#C5A572}.p2 .sec-bar{background:#C5A572}.p2 .tl-dot{background:#C5A572}.p2 .wb{background:#C5A572}.p2 .nav-tab{background:#C5A572;color:#1a1a2e}
-.p3 .dt{color:#F5F0E8;background:#3D2B1F}.p3 .sec-bar{background:#3D2B1F}.p3 .tl-dot{background:#3D2B1F}.p3 .wb{background:#3D2B1F}.p3 .nav-tab{background:#3D2B1F;color:#F5F0E8}
+/* Phase colors */
+.p0 .dt{color:#1a1a2e;background:#FF6E00}.p0 .sec-bar{background:#FF6E00}.p0 .tl-dot{background:#FF6E00}.p0 .wb{background:#FF6E00}.p0 .tab-btn{background:#FF6E00;color:#1a1a2e}
+.p1 .dt{color:#F5F0E8;background:#1a1a2e}.p1 .sec-bar{background:#1a1a2e}.p1 .tl-dot{background:#1a1a2e}.p1 .wb{background:#1a1a2e}.p1 .tab-btn{background:#1a1a2e;color:#F5F0E8}
+.p2 .dt{color:#1a1a2e;background:#C5A572}.p2 .sec-bar{background:#C5A572}.p2 .tl-dot{background:#C5A572}.p2 .wb{background:#C5A572}.p2 .tab-btn{background:#C5A572;color:#1a1a2e}
+.p3 .dt{color:#F5F0E8;background:#3D2B1F}.p3 .sec-bar{background:#3D2B1F}.p3 .tl-dot{background:#3D2B1F}.p3 .wb{background:#3D2B1F}.p3 .tab-btn{background:#3D2B1F;color:#F5F0E8}
 
-.ft{text-align:center;padding:28px;color:#8B7355;font-size:.8rem;font-weight:500;letter-spacing:.5px}
-@media(max-width:768px){.grid{grid-template-columns:1fr;gap:16px}.banner h1{font-size:1.5rem}.card{padding:16px}.nav a{font-size:.78rem;padding:10px 4px}.nav a .cn{font-size:.65rem}}
+.ft{text-align:center;padding:14px;color:#8B7355;font-size:.74rem;font-weight:500;letter-spacing:.5px}
+
+/* Mobile responsive */
+@media(max-width:768px){
+  body{padding:6px;font-size:14px;line-height:1.5}
+  .banner{padding:14px 12px;margin-bottom:8px;border-radius:8px}
+  .banner h1{font-size:1.25rem;letter-spacing:2px}
+  .banner .sub{font-size:.76rem}
+  .banner .tags{margin-top:6px;gap:4px}
+  .banner .tags span{font-size:.66rem;padding:3px 8px}
+  .tabs{border-radius:6px;margin-bottom:8px}
+  .tab{padding:10px 3px;font-size:.72rem}
+  .tab .cn{font-size:.58rem}
+  .sec{margin-bottom:8px}
+  .sec-bar{padding:8px 12px;font-size:.84rem}
+  .sec-bar .cn{font-size:.7rem}
+  .sec-body{border-radius:0 0 6px 6px}
+  /* Mobile grid: Itinerary full width, Transport + Stay side by side, boxes full width */
+  .grid{grid-template-columns:1fr 1fr;gap:6px 8px}
+  .grid>div:first-child{grid-column:1/-1}
+  .grid>div:nth-child(2),.grid>div:nth-child(3){align-self:start}
+  .grid>div:nth-child(3) .box{grid-column:1/-1;margin-top:6px}
+  .tl::before{left:43px}
+  .card{padding:10px 12px}
+  .card-top{gap:6px;margin-bottom:8px}
+  .dt{font-size:.82rem;padding:3px 8px}
+  .wb{font-size:.68rem;padding:2px 8px}
+  .col-h{font-size:.6rem;letter-spacing:1px;margin-bottom:3px;padding-bottom:2px}
+  .tl-item{font-size:.78rem;padding:2px 2px;gap:6px}
+  .tl-time{width:36px;font-size:.66rem}
+  .tl-txt{font-size:.76rem;line-height:1.45}
+  .tl-dot{width:6px;height:6px;margin-top:4px}
+  .tc,.hc{font-size:.74rem;line-height:1.4}
+  .w-note{font-size:.68rem;padding:3px 8px;margin-top:4px}
+  .box{padding:6px 8px;margin-top:6px;border-radius:4px}
+  .tk-h,.tp-h{font-size:.6rem;margin-bottom:3px}
+  .tk-item{font-size:.7rem;margin-bottom:3px}
+  .tk-item a{padding:1px 6px;font-size:.68rem}
+  .tk-note{font-size:.66rem;padding-left:10px}
+  .tp-item{font-size:.68rem;margin-bottom:2px;padding-left:10px}
+  .tp-item::before{top:6px;width:4px;height:4px}
+  .ft{padding:10px 8px;font-size:.66rem}
+}
 </style>
 </head>
 <body>
@@ -82,104 +133,112 @@ a:hover{color:#FF6E00;text-decoration:underline}
 <div class="tags"><span>Barcelona</span><span>Tossa</span><span>Tenerife</span></div>
 </div>
 
-<div class="nav">
-<a class="nav-tab p0" onclick="jump(0)">Barcelona<span class="cn">巴塞罗那</span><span class="arrow" style="border-top:7px solid #FF6E00"></span></a>
-<a class="nav-tab p1" onclick="jump(1)">Tossa<span class="cn">布拉瓦海岸</span><span class="arrow" style="border-top:7px solid #1a1a2e"></span></a>
-<a class="nav-tab p2" onclick="jump(2)">Tenerife<span class="cn">特内里费岛</span><span class="arrow" style="border-top:7px solid #C5A572"></span></a>
-<a class="nav-tab p3" onclick="jump(3)">Return<span class="cn">返程</span><span class="arrow" style="border-top:7px solid #3D2B1F"></span></a>
+<div class="tabs">
+<button class="tab tab-btn p0 active" onclick="showTab(0)">Barcelona<span class="cn">巴塞罗那</span></button>
+<button class="tab tab-btn p1" onclick="showTab(1)">Tossa<span class="cn">布拉瓦海岸</span></button>
+<button class="tab tab-btn p2" onclick="showTab(2)">Tenerife<span class="cn">特内里费岛</span></button>
+<button class="tab tab-btn p3" onclick="showTab(3)">Return<span class="cn">返程</span></button>
 </div>
-<div class="sec p0" id="sec0"><div class="sec-bar">Barcelona <span class="cn">巴塞罗那</span></div><div class="sec-body">
+
+<div class="tab-panel active" id="panel0">
+<div class="sec p0"><div class="sec-bar">Barcelona <span class="cn">巴塞罗那 · Day 1–2</span></div><div class="sec-body">
 <div class="card"><div class="card-top"><span class="dt">Sep 30 Wed</span><span class="wb">⛅ Barcelona 20-26°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
 <div class="tl-item"><span class="tl-time">08:00</span><span class="tl-dot"></span><span class="tl-txt">抵达巴塞罗那机场（BCN），办理入境并提取行李</span></div>
 <div class="tl-item"><span class="tl-time">09:30</span><span class="tl-dot"></span><span class="tl-txt">Niza Cars 取车后开往 The Hoxton 酒店，寄存行李、车辆入库</span></div>
 <div class="tl-item"><span class="tl-time">10:30</span><span class="tl-dot"></span><span class="tl-txt">地铁L1红线 → 加泰罗尼亚广场（Plaça de Catalunya）</span></div>
-<div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">兰布拉大道（La Rambla）·博盖利亚市场（La Boqueria）品尝火腿与水果·哥特区（Gothic Quarter）巷弄探幻，驻足巴塞罗那大教堂（Cathedral of Barcelona）</span></div>
+<div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">兰布拉大道（La Rambla）·博盖利亚市场（La Boqueria）品尝火腿与水果·哥特区（Gothic Quarter）巷弄探幽，驻足巴塞罗那大教堂（Cathedral of Barcelona）</span></div>
 <div class="tl-item"><span class="tl-time">14:40</span><span class="tl-dot"></span><span class="tl-txt">回酒店办理入住，换轻便衣物休整恢复精力</span></div>
-<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">巴特罗之家（Casa Batlló）AR 智能导览，感受“海洋大厅”与龙脊天台</span></div>
-<div class="tl-item"><span class="tl-time">18:45</span><span class="tl-dot"></span><span class="tl-txt">沿格拉西亚大道步行6min→米拉之家（Casa Milà），天台“外星人烟囱”与日落金光绝佳机位</span></div>
+<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">巴特罗之家（Casa Batlló）AR 智能导览，感受"海洋大厅"与龙脊天台</span></div>
+<div class="tl-item"><span class="tl-time">18:45</span><span class="tl-dot"></span><span class="tl-txt">沿格拉西亚大道步行6min→米拉之家（Casa Milà），天台"外星人烟囱"与日落金光绝佳机位</span></div>
 <div class="tl-item"><span class="tl-time">20:45</span><span class="tl-dot"></span><span class="tl-txt">El Nacional 美食大厅晚餐，饭后赏双公寓亮灯魔幻夜景</span></div>
 </div><div class="w-note">📌 步行舒适，正午防晒</div></div>
 <div><div class="col-h">Transport</div><div class="tc">CA839 PVG 01:00→BCN 07:55<br>Niza Cars 08:30取车<br>酒店停车，全程公交<br>L1线 / X1路 / 步行</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">The Hoxton, Poblenou</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://casabatllo.es/en/tickets/" target="_blank">Casa Batlló</a></div><div class="tk-note">预约16:30时段，含AR智能导览耳机，沉浸式体验“海洋大厅”彩窗与龙脊屋顶</div><div class="tk-item">🔗 <a href="https://www.lapedrera.com/en/tickets" target="_blank">Casa Milà</a></div><div class="tk-note">预约18:45旵即黄昏前入场，登天台赏“外星人烟囱”与日落金光洗礼全城</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">哥特区巷弄狭窄拥挤，包背胸前、手机勿放后袋，警惑摩洛哥亚小店换假币</div><div class="tp-item">双公寓人流密集，禁背双肩包以防被拉开，贵重物品留酒店保险箱</div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">The Hoxton, Poblenou</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://casabatllo.es/en/tickets/" target="_blank">Casa Batlló</a></div><div class="tk-note">预约16:30时段，含AR智能导览耳机，沉浸式体验"海洋大厅"彩窗与龙脊屋顶</div><div class="tk-item">🔗 <a href="https://www.lapedrera.com/en/tickets" target="_blank">Casa Milà</a></div><div class="tk-note">预约18:45即黄昏前入场，登天台赏"外星人烟囱"与日落金光洗礼全城</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">哥特区巷弄狭窄拥挤，包背胸前、手机勿放后袋，警惕摩洛哥小店换假币</div><div class="tp-item">双公寓人流密集，禁背双肩包以防被拉开，贵重物品留酒店保险箱</div></div></div>
 </div></div>
 <div class="card"><div class="card-top"><span class="dt">Oct 1 Thu</span><span class="wb">☀️ Barcelona 19-25°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
-<div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">打车→圮尔公园（Park Güell），09:30首批入场，漫步百柱厅与波浪马赛克长椅</span></div>
-<div class="tl-item"><span class="tl-time">12:00</span><span class="tl-dot"></span><span class="tl-txt">公交V19→圣家堂（Sagrada Família），正午阳光穿透彩率玻璃，“天堂光影”最佳时刻</span></div>
+<div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">打车→桂尔公园（Park Güell），09:30首批入场，漫步百柱厅与波浪马赛克长椅</span></div>
+<div class="tl-item"><span class="tl-time">12:00</span><span class="tl-dot"></span><span class="tl-txt">公交V19→圣家堂（Sagrada Família），正午阳光穿透彩绘玻璃，"天堂光影"最佳时刻</span></div>
 <div class="tl-item"><span class="tl-time">14:00</span><span class="tl-dot"></span><span class="tl-txt">圣高迪大道（Avinguda de Gaudí）露天午餐，推荐墨鱼汁海鲜饭</span></div>
 <div class="tl-item"><span class="tl-time">15:30</span><span class="tl-dot"></span><span class="tl-txt">地铁L2紫线→Paral·lel → 蒙特惠奇缆车（Funicular de Montjuïc）</span></div>
-<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">蒙特惠奇城堡（Castell de Montjuïc）360°俯瞋全城与海港，拍奥林匹克体育场下山</span></div>
+<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">蒙特惠奇城堡（Castell de Montjuïc）360°俯瞰全城与海港，拍奥林匹克体育场下山</span></div>
 <div class="tl-item"><span class="tl-time">18:30</span><span class="tl-dot"></span><span class="tl-txt">顺山路步行下山赏名山日落与晚霞</span></div>
-<div class="tl-item"><span class="tl-time">19:30</span><span class="tl-dot"></span><span class="tl-txt">西班牙广场（Plaça d'Espanya）Arenas斗牛场天台晚餐，鸟瞋国家宫灿烂夜景</span></div>
+<div class="tl-item"><span class="tl-time">19:30</span><span class="tl-dot"></span><span class="tl-txt">西班牙广场（Plaça d'Espanya）Arenas斗牛场天台晚餐，鸟瞰国家宫灿烂夜景</span></div>
 <div class="tl-item"><span class="tl-time">21:00</span><span class="tl-dot"></span><span class="tl-txt">地铁L1红线直达回酒店 Glòries 站</span></div>
 </div><div class="w-note">📌 圣家堂光影最佳，山顶风大需外套</div></div>
 <div><div class="col-h">Transport</div><div class="tc">出租车 / V19路<br>L2线（紫）<br>蒙特惠奇缆车<br>L1线（红）回</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">The Hoxton, Poblenou</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://parkguell.barcelona/en/tickets" target="_blank">Park Güell</a></div><div class="tk-note">预约09:30首批入场，避开旅游团高峰，百柱厅与波浪长椅拍照零等待</div><div class="tk-item">🔗 <a href="https://sagradafamilia.org/en/tickets" target="_blank">Sagrada Família</a></div><div class="tk-note">预约12:00时段，正午阳光穿透彩率玻璃“天堂光影”最佳，含登塔体验</div><div class="tk-item">🔗 <a href="https://www.barcelonabusturistic.cat/en/montjuic-cable-car" target="_blank">Castell de Montjuïc</a></div><div class="tk-note">可选购缆车票直达山顶城堡，省去爬山体力，时间充裕可步行下山</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">早晚温差达10°C，带轻外套与折叠雨伞，山顶风大需抓绒衣</div><div class="tp-item">圣家堂、桂尔公园、双公寓现场均不售票，须提前官网预约指定时段，购票后不可改期</div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">The Hoxton, Poblenou</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://parkguell.barcelona/en/tickets" target="_blank">Park Güell</a></div><div class="tk-note">预约09:30首批入场，避开旅游团高峰，百柱厅与波浪长椅拍照零等待</div><div class="tk-item">🔗 <a href="https://sagradafamilia.org/en/tickets" target="_blank">Sagrada Família</a></div><div class="tk-note">预约12:00时段，正午阳光穿透彩绘玻璃"天堂光影"最佳，含登塔体验</div><div class="tk-item">🔗 <a href="https://www.barcelonabusturistic.cat/en/montjuic-cable-car" target="_blank">Castell de Montjuïc</a></div><div class="tk-note">可选购缆车票直达山顶城堡，省去爬山体力，时间充裕可步行下山</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">早晚温差达10°C，带轻外套与折叠雨伞，山顶风大需抓绒衣</div><div class="tp-item">圣家堂、桂尔公园、双公寓现场均不售票，须提前官网预约指定时段，购票后不可改期</div></div></div>
 </div></div>
 </div></div>
-<div class="sec p1" id="sec1"><div class="sec-bar">Tossa <span class="cn">布拉瓦海岸</span></div><div class="sec-body">
+</div>
+
+<div class="tab-panel" id="panel1">
+<div class="sec p1"><div class="sec-bar">Tossa <span class="cn">布拉瓦海岸 · Day 3–4</span></div><div class="sec-body">
 <div class="card"><div class="card-top"><span class="dt">Oct 2 Fri</span><span class="wb">☀️ Tossa 18-24°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
 <div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">巴塞罗那退房出发，自驾北上全程65km→布拉内斯（Blanes）</span></div>
 <div class="tl-item"><span class="tl-time">12:30</span><span class="tl-dot"></span><span class="tl-txt">布拉内斯港口海鲜大餐，铁板海鲜拼盘（Parrillada）与墨鱼汁饭（Arròs Negre）</span></div>
-<div class="tl-item"><span class="tl-time">14:15</span><span class="tl-dot"></span><span class="tl-txt">马里穆尔特拉植物园（Jardí Botànic Marimurtra），崭崖上海景仙人掌林·林奘神庙（Temple de Linné）白色石柱与深蓝地中海</span></div>
-<div class="tl-item"><span class="tl-time">15:45</span><span class="tl-dot"></span><span class="tl-txt">驾驶 GI-682 最美沿海公路，阳光洒海面波光粩粩，25min抵达托萩</span></div>
+<div class="tl-item"><span class="tl-time">14:15</span><span class="tl-dot"></span><span class="tl-txt">马里穆尔特拉植物园（Jardí Botànic Marimurtra），悬崖上海景仙人掌林·林奈神庙（Temple de Linné）白色石柱与深蓝地中海</span></div>
+<div class="tl-item"><span class="tl-time">15:45</span><span class="tl-dot"></span><span class="tl-txt">驾驶 GI-682 最美沿海公路，阳光洒海面波光粼粼，25min抵达托萨</span></div>
 <div class="tl-item"><span class="tl-time">16:15</span><span class="tl-dot"></span><span class="tl-txt">入住 Zel Tossa 度假村，阳台吹海风换海滩装</span></div>
-<div class="tl-item"><span class="tl-time">17:15</span><span class="tl-dot"></span><span class="tl-txt">托萩古城墙（Muralles de Tossa）·大沙滩（Platja Gran）·灯塔（Far de Tossa）在悬崖咖啡厅迎接19:30地中海日落</span></div>
+<div class="tl-item"><span class="tl-time">17:15</span><span class="tl-dot"></span><span class="tl-txt">托萨古城墙（Muralles de Tossa）·大沙滩（Platja Gran）·灯塔（Far de Tossa）在悬崖咖啡厅迎接19:30地中海日落</span></div>
 <div class="tl-item"><span class="tl-time">19:30</span><span class="tl-dot"></span><span class="tl-txt">Restaurant Tursia 古城墙下晚餐，饭后散步赏中世纪城墙亮灯夜景</span></div>
 </div><div class="w-note">📌 海风微凉，古城日落完美</div></div>
 <div><div class="col-h">Transport</div><div class="tc">自驾 BCN→Blanes 1h<br>GI-682→Tossa 25min<br>步行</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">Zel Tossa, Tossa de Mar</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://www.marimurtra.cat/en/tickets/" target="_blank">Marimurtra 植物园</a></div><div class="tk-note">提前官网购票，现场不售票。崭崖仙人掌林与白色石柱神庙是拍照绝佳机位</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">GI-682沿海公路弯道多且无护栏，注意控速。周末返程预留2小时应对路况</div><div class="tp-item">托萩古城墙与海湾均免费开放，灯塔最佳拍照时间为黄昏前30分钟金光最柔</div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">Zel Tossa, Tossa de Mar</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://www.marimurtra.cat/en/tickets/" target="_blank">Marimurtra 植物园</a></div><div class="tk-note">提前官网购票，现场不售票。悬崖仙人掌林与白色石柱神庙是拍照绝佳机位</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">GI-682沿海公路弯道多且无护栏，注意控速。周末返程预留2小时应对路况</div><div class="tp-item">托萨古城墙与海湾均免费开放，灯塔最佳拍照时间为黄昏前30分钟金光最柔</div></div></div>
 </div></div>
 <div class="card"><div class="card-top"><span class="dt">Oct 3 Sat</span><span class="wb">☀️ Tossa 17-23°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
 <div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">度假村早餐，沿私密海湾 Cala Giverola 散步</span></div>
-<div class="tl-item"><span class="tl-time">11:30</span><span class="tl-dot"></span><span class="tl-txt">徒步 Cala Pola 玄翠海湾，V字形天然海湾海水如玄翠绿，沿国王步道（Camí de Ronda）拍静谧海景</span></div>
-<div class="tl-item"><span class="tl-time">13:30</span><span class="tl-dot"></span><span class="tl-txt">托萩老街 Tapas 简餐，番茄面包与炸小红鱼</span></div>
+<div class="tl-item"><span class="tl-time">11:30</span><span class="tl-dot"></span><span class="tl-txt">徒步 Cala Pola 翡翠海湾，V字形天然海湾海水如翡翠绿，沿国王步道（Camí de Ronda）拍静谧海景</span></div>
+<div class="tl-item"><span class="tl-time">13:30</span><span class="tl-dot"></span><span class="tl-txt">托萨老街 Tapas 简餐，番茄面包与炸小红鱼</span></div>
 <div class="tl-item"><span class="tl-time">15:00</span><span class="tl-dot"></span><span class="tl-txt">自驾返回巴塞罗那机场（105km，预留2h应对周末路况）</span></div>
 <div class="tl-item"><span class="tl-time">17:00</span><span class="tl-dot"></span><span class="tl-txt">Galp 加油加满保留小票</span></div>
 <div class="tl-item"><span class="tl-time">17:30</span><span class="tl-dot"></span><span class="tl-txt">Niza Cars 还车，搭接驳车前往航站楼</span></div>
 <div class="tl-item"><span class="tl-time">19:55</span><span class="tl-dot"></span><span class="tl-txt">VY3214 巴塞罗那（BCN）→ 特内里费北（TFN）</span></div>
 <div class="tl-item"><span class="tl-time">22:25</span><span class="tl-dot"></span><span class="tl-txt">抵达 TFN，Keddy 取车后开车前往南部酒店</span></div>
-</div><div class="w-note">📌 海湾清晰出片，路况良好</div></div>
-<div><div class="col-h">Transport</div><div class="tc">自驾 Tossa→BCN 2h<br>Niza 还车 17:00<br>VY3214 BCN 19:55→TFN 22:25<br>Keddy 取车 23:00</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">Tivoli la Caleta Resort, Costa Adeje</div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">周末高速车多，返程预留2h。还车前拍照加油小票，丢失需自费</div><div class="tp-item">还车前拍照加油小票，丢失需自费赔偿。机场还车点在S2停车场层</div></div></div>
+</div><div class="w-note">📌 海湾清澈出片，路况良好</div></div>
+<div><div class="col-h">Transport</div><div class="tc">自驾 Tossa→BCN 2h<br>Niza 还车 17:30<br>VY3214 BCN 19:55→TFN 22:25<br>Keddy 取车 23:00</div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">Tivoli la Caleta Resort, Costa Adeje</div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">周末高速车多，返程预留2h。还车前拍照保留加油小票，丢失需自费赔偿</div><div class="tp-item">机场还车点在S2停车场层，搭接驳车5min到航站楼</div></div></div>
 </div></div>
 </div></div>
-<div class="sec p2" id="sec2"><div class="sec-bar">Tenerife <span class="cn">特内里费岛</span></div><div class="sec-body">
+</div>
+
+<div class="tab-panel" id="panel2">
+<div class="sec p2"><div class="sec-bar">Tenerife <span class="cn">特内里费岛 · Day 5–7</span></div><div class="sec-body">
 <div class="card"><div class="card-top"><span class="dt">Oct 4 Sun</span><span class="wb">☀️ Teide 5-12°C 山顶</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
 <div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">Tivoli 早餐，10:30 退房装行李出发</span></div>
-<div class="tl-item"><span class="tl-time">10:30</span><span class="tl-dot"></span><span class="tl-txt">自驾 TF-38 公路穿越加泰罗尼亚松林·馍升至云海之上的黑色火星荒漠</span></div>
-<div class="tl-item"><span class="tl-time">12:00</span><span class="tl-dot"></span><span class="tl-txt">泰德峰缆车（Teleférico del Teide）8min飙升至 3555m 观景台，沿12号步道（Pico Viejo）漫步火山喷发口，俯瞋大西洋海岛全景</span></div>
+<div class="tl-item"><span class="tl-time">10:30</span><span class="tl-dot"></span><span class="tl-txt">自驾 TF-38 公路穿越加那利松林·攀升至云海之上的黑色火星荒漠</span></div>
+<div class="tl-item"><span class="tl-time">12:00</span><span class="tl-dot"></span><span class="tl-txt">泰德峰缆车（Teleférico del Teide）8min飙升至 3555m 观景台，沿12号步道（Pico Viejo）漫步火山喷发口，俯瞰大西洋海岛全景</span></div>
 <div class="tl-item"><span class="tl-time">14:30</span><span class="tl-dot"></span><span class="tl-txt">缆车基地餐厅简餐充饥</span></div>
-<div class="tl-item"><span class="tl-time">15:30</span><span class="tl-dot"></span><span class="tl-txt">罗克·德·加西亚巨石群（Roques de García）近距离打卡“上帝手指”奇石</span></div>
+<div class="tl-item"><span class="tl-time">15:30</span><span class="tl-dot"></span><span class="tl-txt">罗克·德·加西亚巨石群（Roques de García）近距离打卡"上帝手指"奇石</span></div>
 <div class="tl-item"><span class="tl-time">18:00</span><span class="tl-dot"></span><span class="tl-txt">驾车前往观星集合点，夕阳将云海染成壮丽粉橙色</span></div>
 <div class="tl-item"><span class="tl-time">19:30</span><span class="tl-dot"></span><span class="tl-txt">专业向导领队，高倍望远镜观测银河、星团与土星光环，肉眼可见繁星满天</span></div>
 <div class="tl-item"><span class="tl-time">21:30</span><span class="tl-dot"></span><span class="tl-txt">TF-38 慢速下山 50min → 丽思卡尔顿（The Ritz-Carlton Abama）入住</span></div>
-</div><div class="w-note">📌 峰顶冷崻，观星夜间极度清晰</div></div>
+</div><div class="w-note">📌 峰顶寒冷，观星夜间极度清晰</div></div>
 <div><div class="col-h">Transport</div><div class="tc">自驾 TF-38<br>缆车（须提前预约12:00）<br>夜间慢速下山</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">The Ritz-Carlton Tenerife, Abama</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://www.volcanoteide.com/en/cable_car" target="_blank">Teide 缆车</a></div><div class="tk-note">预约12:00时段缆车升顶，须提前1月预约。10月为观星旺季，票重紧张</div><div class="tk-item">🔗 <a href="https://www.volcanoteide.com/en/stargazing" target="_blank">Teide 日落观星团</a></div><div class="tk-note">专业向导领队，高倍望远镜观测银河与土星光环，肉眼可见繁星满天</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">TF-38夜间无路灯无护栏，仅靠车灯，严禁超速。建8ba夜间下山速度不超40km/h</div><div class="tp-item">缆车与观星团均需提前1月预约，10月为观星旺季票重紧张。峰顶气温仅只5°C，必备冲锋衣与抓绒鞋</div><div class="tp-item">峰顶需冲锋衣+抓绒，观星夜约5°C</div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">The Ritz-Carlton Tenerife, Abama</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://www.volcanoteide.com/en/cable_car" target="_blank">Teide 缆车</a></div><div class="tk-note">预约12:00时段缆车升顶，须提前1月预约。10月为观星旺季，票量紧张</div><div class="tk-item">🔗 <a href="https://www.volcanoteide.com/en/stargazing" target="_blank">Teide 日落观星团</a></div><div class="tk-note">专业向导领队，高倍望远镜观测银河与土星光环，肉眼可见繁星满天</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">TF-38夜间无路灯无护栏，仅靠车灯，严禁超速。建议夜间下山速度不超40km/h</div><div class="tp-item">缆车与观星团均需提前1月预约，10月为观星旺季票量紧张。峰顶气温仅5°C，必备冲锋衣与抓绒衣</div></div></div>
 </div></div>
 <div class="card"><div class="card-top"><span class="dt">Oct 5 Mon</span><span class="wb">☀️ Tenerife S 22-28°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
 <div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">丽思卡尔顿粉红城堡度假村享用顶级自助早餐，换泳装防晒出海</span></div>
 <div class="tl-item"><span class="tl-time">11:30</span><span class="tl-dot"></span><span class="tl-txt">开车15min→科隆港口（Puerto Colón）</span></div>
-<div class="tl-item"><span class="tl-time">12:00</span><span class="tl-dot"></span><span class="tl-txt">豪华双体帆船（Catamaran）出海观鲸 3h，近距离观赏颈鲸与海豚嘮戏，吋尾果冻湾游泳</span></div>
+<div class="tl-item"><span class="tl-time">12:00</span><span class="tl-dot"></span><span class="tl-txt">豪华双体帆船（Catamaran）出海观鲸 3h，近距离观赏领航鲸与海豚嬉戏，船尾果冻湾游泳</span></div>
 <div class="tl-item"><span class="tl-time">15:00</span><span class="tl-dot"></span><span class="tl-txt">下船后开车20min→巨人悬崖（Los Gigantes）</span></div>
 <div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">500m黑色火山断崖垂直插入大西洋，配合纯黑火山沙滩（Platja de la Arena）呈魔幻末日美感</span></div>
 <div class="tl-item"><span class="tl-time">18:30</span><span class="tl-dot"></span><span class="tl-txt">悬崖海景餐厅享用加那利海鲜晚餐</span></div>
 <div class="tl-item"><span class="tl-time">20:00</span><span class="tl-dot"></span><span class="tl-txt">驾车15min返回丽思卡尔顿</span></div>
 </div><div class="w-note">📌 海面微风，鲸鱼活跃，午后防晒</div></div>
 <div><div class="col-h">Transport</div><div class="tc">自驾 / 步行<br>→科隆港口 15min<br>→巨人悬崖 20min<br>帆船须预约12:00</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">The Ritz-Carlton Tenerife, Abama</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://whitetenerife.com/" target="_blank">White Tenerife 双体帆船</a></div><div class="tk-note">预约12:00出海，含午餐与泳装。豪华双体船近距离观赏颈鲸与海豚嘮戏</div><div class="tk-item">🔗 <a href="https://biosean.com/en/" target="_blank">Biosean 生态观鲸</a></div><div class="tk-note">小船生态观鲸，不资助人工喂饵，更贴近自然，适合亲子家庭</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">出海前涂高倍防晒霜，备好泳装与浴巾。船上提供免费饮品与Tapas，另带晕船药</div><div class="tp-item">巨人悬崖下黑沙滩午后沙温可达50°C，建8ba湿鞋或流水鞋。悬崖观景台风大，注意帽子</div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">The Ritz-Carlton Tenerife, Abama</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://whitetenerife.com/" target="_blank">White Tenerife 双体帆船</a></div><div class="tk-note">预约12:00出海，含午餐与泳装。豪华双体船近距离观赏领航鲸与海豚嬉戏</div><div class="tk-item">🔗 <a href="https://biosean.com/en/" target="_blank">Biosean 生态观鲸</a></div><div class="tk-note">小船生态观鲸，不资助人工喂饵，更贴近自然，适合亲子家庭</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">出海前涂高倍防晒霜，备好泳装与浴巾。船上提供免费饮品与Tapas，另带晕船药</div><div class="tp-item">巨人悬崖下黑沙滩午后沙温可达50°C，建议穿涉水鞋。悬崖观景台风大，注意帽子</div></div></div>
 </div></div>
 <div class="card"><div class="card-top"><span class="dt">Oct 6 Tue</span><span class="wb">⛅ Tenerife N 20-26°C</span></div>
 <div class="grid">
@@ -188,16 +247,19 @@ a:hover{color:#FF6E00;text-decoration:underline}
 <div class="tl-item"><span class="tl-time">11:30</span><span class="tl-dot"></span><span class="tl-txt">退房，自驾北上穿越西侧山区前往北部</span></div>
 <div class="tl-item"><span class="tl-time">13:00</span><span class="tl-dot"></span><span class="tl-txt">加拉奇科古镇（Garachico）漫步，色彩斑斓的西班牙殖民街道</span></div>
 <div class="tl-item"><span class="tl-time">14:00</span><span class="tl-dot"></span><span class="tl-txt">埃尔卡拉通天然火山泳池（El Caletón）感受岩浆奇观，镇上享用海鲜饭</span></div>
-<div class="tl-item"><span class="tl-time">15:30</span><span class="tl-dot"></span><span class="tl-txt">自驾→特内里费南机场（TFS），预留2h应对山区路况</span></div>
-<div class="tl-item"><span class="tl-time">17:30</span><span class="tl-dot"></span><span class="tl-txt">Cepsa 加油加满 → Cicar/Plus car 还车交钥匙</span></div>
+<div class="tl-item"><span class="tl-time">15:30</span><span class="tl-dot"></span><span class="tl-txt">自驾→特内里费北机场（TFN），预留2h应对山区路况</span></div>
+<div class="tl-item"><span class="tl-time">17:30</span><span class="tl-dot"></span><span class="tl-txt">Cepsa 加油加满 → Keddy 还车交钥匙</span></div>
 <div class="tl-item"><span class="tl-time">20:15</span><span class="tl-dot"></span><span class="tl-txt">VY3209 特内里费北（TFN）→ 巴塞罗那（BCN）</span></div>
 <div class="tl-item"><span class="tl-time">00:35+1</span><span class="tl-dot"></span><span class="tl-txt">抵达 BCN，打车→机场酒店入住</span></div>
 </div><div class="w-note">📌 古镇温和，山区可能多雾</div></div>
-<div><div class="col-h">Transport</div><div class="tc">自驾→TFS 2h<br>Cepsa加油→还车<br>VY3209 TFN 20:15→BCN 00:35+1<br>Taxi</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">BAH Barcelona Airport Hotel</div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">还车前在Cepsa加油加满，保留小票。山区返程可能遇雾，预留2小时余裕时间</div><div class="tp-item">北部山区道路弯多且易起雾，建8ba预留2小时。如遇大雾开雾灯、慢速行驶，尽量在天黑前抵达机场</div></div></div>
+<div><div class="col-h">Transport</div><div class="tc">自驾→TFN 2h<br>Cepsa加油→Keddy还车<br>VY3209 TFN 20:15→BCN 00:35+1<br>Taxi</div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">BAH Barcelona Airport Hotel</div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">还车前在Cepsa加油加满，保留小票。山区返程可能遇雾，预留2小时余裕时间</div><div class="tp-item">北部山区道路弯多且易起雾，建议预留2小时。如遇大雾开雾灯、慢速行驶，尽量在天黑前抵达机场</div></div></div>
 </div></div>
 </div></div>
-<div class="sec p3" id="sec3"><div class="sec-bar">Return <span class="cn">返程</span></div><div class="sec-body">
+</div>
+
+<div class="tab-panel" id="panel3">
+<div class="sec p3"><div class="sec-bar">Return <span class="cn">返程 · Day 8–9</span></div><div class="sec-body">
 <div class="card"><div class="card-top"><span class="dt">Oct 7 Wed</span><span class="wb">⛅ Barcelona 18-24°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
@@ -214,38 +276,35 @@ a:hover{color:#FF6E00;text-decoration:underline}
 <div><div class="col-h">Transport</div><div class="tc">CA840 BCN 12:50→PVG 07:25+1</div></div>
 <div><div class="col-h">Stay & Notes</div><div class="hc">Home</div></div>
 </div></div>
+</div></div>
 </div>
-</div>
-</div>
+
 <div class="ft">Spain Schengen Visa Itinerary 2026 · Barcelona · Tossa · Tenerife</div>
+</div>
 
 <script>
-// all cards expanded by default
-
-
-function jump(i){
-  document.getElementById('sec'+i).scrollIntoView({behavior:'smooth',block:'start'});
-  var navs=document.querySelectorAll('.nav a');
-  for(var n of navs)n.classList.remove('active');
-  navs[i].classList.add('active');
+function showTab(i){
+  var tabs=document.querySelectorAll('.tab');
+  var panels=document.querySelectorAll('.tab-panel');
+  if(i<0)i=tabs.length-1;
+  if(i>=tabs.length)i=0;
+  for(var t of tabs)t.classList.remove('active');
+  for(var p of panels)p.classList.remove('active');
+  tabs[i].classList.add('active');
+  panels[i].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
-// default active
-document.querySelector('.nav a').classList.add('active');
-// highlight section on scroll
-window.onscroll=function(){
-  var secs=document.querySelectorAll('.sec');
-  var navs=document.querySelectorAll('.nav a');
-  var scrollY=window.scrollY+120;
-  for(var i=0;i<secs.length;i++){
-    var top=secs[i].offsetTop;
-    var bot=top+secs[i].offsetHeight;
-    if(scrollY>=top&&scrollY<bot){
-      for(var n of navs)n.classList.remove('active');
-      navs[i].classList.add('active');
-      break;
-    }
+// Touch swipe for mobile
+var tsx=0;
+document.addEventListener('touchstart',function(e){tsx=e.changedTouches[0].screenX},{passive:true});
+document.addEventListener('touchend',function(e){
+  var d=tsx-e.changedTouches[0].screenX;
+  if(Math.abs(d)>60){
+    var cur=document.querySelector('.tab.active');
+    var idx=Array.from(document.querySelectorAll('.tab')).indexOf(cur);
+    showTab(d>0?idx+1:idx-1);
   }
-};
+},{passive:true});
 </script>
 </body>
 </html>
