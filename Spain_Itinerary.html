@@ -98,6 +98,26 @@ a:hover{color:#FF6E00;text-decoration:underline}
 
 .ft{text-align:center;padding:14px;color:#8B7355;font-size:.74rem;font-weight:500;letter-spacing:.5px}
 
+/* Emergency info */
+.emerg{background:#FFF5F5;border:1.5px solid #C0392B;border-radius:5px;padding:8px 12px;margin-top:8px}
+.emerg-h{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#C0392B;font-weight:800;margin-bottom:4px;display:flex;align-items:center;gap:4px}
+.emerg-item{font-size:.74rem;color:#1a1a2e;line-height:1.45;padding-left:13px;position:relative;margin-bottom:2px}
+.emerg-item::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:#C0392B}
+.emerg-item strong{color:#C0392B}
+
+/* Print: show all tabs */
+@media print{
+  .tabs{display:none}
+  .tab-panel{display:block!important;page-break-after:always}
+  .tab-panel:last-child{page-break-after:auto}
+  .tc-body{max-height:none!important;opacity:1!important}
+  .tc-wrap.collapsed .tc-body{max-height:none!important;opacity:1!important}
+  body{padding:0;font-size:12px}
+  .banner{box-shadow:none;border:1px solid #999}
+  .card{page-break-inside:avoid}
+  .btt-print{display:none}
+}
+
 /* Mobile responsive */
 @media(max-width:768px){
   body{padding:6px;font-size:14px;line-height:1.5}
@@ -190,7 +210,7 @@ a:hover{color:#FF6E00;text-decoration:underline}
 <div class="tl-item"><span class="tl-time">20:00</span><span class="tl-dot"></span><span class="tl-txt">步行至西班牙广场的<a href="https://www.google.com/maps/search/?api=1&query=Arenas+de+Barcelona+Pla%C3%A7a+d%27Espanya" target="_blank">Arenas 斗牛场</a>天台晚餐，鸟瞰国家宫灿烂夜景，结束后打车返回酒店</span></div>
 </div><div class="w-note">📌 圣家堂正午光影最佳，蒙特惠奇山顶风大需外套</div></div>
 <div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">🚗 Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">酒店→桂尔公园</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">桂尔公园→圣家堂</span></div><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">→圣高迪大道午餐</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">→L'Illa Diagonal</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">→蒙特惠奇城堡</span></div><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">下山→奥林匹克体育场</span></div><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">→Arenas斗牛场</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">回酒店</span></div></div></div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">The Hoxton, Poblenou</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://parkguell.barcelona/en/tickets" target="_blank">Park Güell</a></div><div class="tk-note">预约09:30首批入场，避开旅游团高峰，百柱厅与波浪长椅拍照零等待</div><div class="tk-item">🔗 <a href="https://sagradafamilia.org/en/tickets" target="_blank">Sagrada Família</a></div><div class="tk-note">预约12:15时段，正午阳光穿透彩绘玻璃"天堂光影"最佳，含登塔体验</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">早晚温差达10°C，带轻外套与折叠雨伞，蒙特惠奇山顶风大需抓绒衣</div><div class="tp-item">圣家堂、桂尔公园、双公寓现场均不售票，须提前官网预约指定时段，购票后不可改期</div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">The Hoxton, Poblenou</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://parkguell.barcelona/en/tickets" target="_blank">Park Güell</a></div><div class="tk-note">预约09:30首批入场，避开旅游团高峰，百柱厅与波浪长椅拍照零等待</div><div class="tk-item">🔗 <a href="https://sagradafamilia.org/en/tickets" target="_blank">Sagrada Família</a></div><div class="tk-note">预约12:15时段，正午阳光穿透彩绘玻璃"天堂光影"最佳，含登塔体验</div><div class="tk-item">🔗 <a href="https://montjuic.barcelona/en/sites/castell-de-montjuic" target="_blank">Castell de Montjuïc 城堡</a></div><div class="tk-note">山顶城堡门票约5欧，含军事博物馆。360°俯瞰全城与海港，建议黄昏前抵达</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">早晚温差达10°C，带轻外套与折叠雨伞，蒙特惠奇山顶风大需抓绒衣</div><div class="tp-item">圣家堂、桂尔公园、双公寓现场均不售票，须提前官网预约指定时段，购票后不可改期</div></div></div>
 </div></div>
 </div></div>
 </div>
@@ -200,7 +220,7 @@ a:hover{color:#FF6E00;text-decoration:underline}
 <div class="card"><div class="card-top"><span class="dt">Oct 2 Fri</span><span class="wb">☀️ Costa Brava 18-24°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
-<div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">巴塞罗那酒店退房/取车，自驾北上全程约65km、车程1h→<a href="https://www.google.com/maps/search/?api=1&query=Blanes+Spain" target="_blank">布拉内斯（Blanes）</a></span></div>
+<div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">巴塞罗那酒店退房，前往<a href="https://www.google.com/maps/search/?api=1&query=Niza+Cars+Barcelona+El+Prat+Airport" target="_blank">Niza Cars 取车点</a>取车，自驾北上全程约65km、车程1h→<a href="https://www.google.com/maps/search/?api=1&query=Blanes+Spain" target="_blank">布拉内斯（Blanes）</a></span></div>
 <div class="tl-item"><span class="tl-time">12:15</span><span class="tl-dot"></span><span class="tl-txt">驾车直达<a href="https://www.google.com/maps/search/?api=1&query=Port+de+Blanes" target="_blank">布拉内斯港口（Port de Blanes）</a>附近海鲜午餐，用时1h</span></div>
 <div class="tl-item"><span class="tl-time">13:15</span><span class="tl-dot"></span><span class="tl-txt">驱车5min前往<a href="https://www.google.com/maps/search/?api=1&query=Jard%C3%AD+Bot%C3%A0nic+Marimurtra" target="_blank">马里穆尔特拉植物园（Jardí Botànic Marimurtra）</a>，2.5h深度游览：漫步亚热带区与悬崖仙人掌林·<a href="https://www.google.com/maps/search/?api=1&query=Temple+de+Linn%C3%A9+Marimurtra" target="_blank">林奈神庙（Temple de Linné）</a>白色石柱下多角度打卡留影深蓝地中海·沿悬崖栈道走完完整环线观景台</span></div>
 <div class="tl-item"><span class="tl-time">16:00</span><span class="tl-dot"></span><span class="tl-txt">驾驶 GI-682 沿海景观公路约25min，地中海下午阳光洒海面波光粼粼</span></div>
@@ -269,11 +289,11 @@ a:hover{color:#FF6E00;text-decoration:underline}
 <div class="tl-item"><span class="tl-time">13:00</span><span class="tl-dot"></span><span class="tl-txt">漫步 Garachico 色彩斑斓的西班牙殖民风格街道与中心广场</span></div>
 <div class="tl-item"><span class="tl-time">14:00</span><span class="tl-dot"></span><span class="tl-txt">在<a href="https://www.google.com/maps/search/?api=1&query=El+Calet%C3%B3n+Garachico" target="_blank">El Caletón 天然火山泳池</a>感受岩浆冷却奇观，并在镇上享用午餐</span></div>
 <div class="tl-item"><span class="tl-time">16:00</span><span class="tl-dot"></span><span class="tl-txt">【红线时间】16:00 必须准时出发，沿 TF-5 高速前往<a href="https://www.google.com/maps/search/?api=1&query=Tenerife+North+Airport+TFN" target="_blank">特内里费北机场（TFN）</a>，预留充裕时间应对下午拥堵</span></div>
-<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">在机场附近<a href="https://www.google.com/maps/search/?api=1&query=Cepsa+gas+station+near+Tenerife+North+Airport" target="_blank">Cepsa 加油站</a>加满油（保留小票），前往 Keddy / Europcar 柜台办理还车</span></div>
+<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">在机场附近<a href="https://www.google.com/maps/search/?api=1&query=Cepsa+gas+station+near+Tenerife+North+Airport" target="_blank">Cepsa 加油站</a>加满油（保留小票），前往 Keddy (Europcar 旗下) 柜台办理还车</span></div>
 <div class="tl-item"><span class="tl-time">20:15</span><span class="tl-dot"></span><span class="tl-txt">搭乘 VY3209 航班飞往<a href="https://www.google.com/maps/search/?api=1&query=Barcelona+El+Prat+Airport" target="_blank">巴塞罗那机场（BCN）</a>，落地后打车前往机场酒店入住休息</span></div>
 </div><div class="w-note">📌 龙血树+古镇顺路，16:00红线必发</div></div>
 <div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">🚗 Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">TF-82盘山→Icod</span><span class="tc-meta">~1h15m</span></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">→Garachico</span><span class="tc-meta">10min</span></div><div class="tc-divider"></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">TF-5→TFN机场</span><span class="tc-meta">16:00发</span></div><div class="tc-line"><span class="tc-emoji">⛽</span><span class="tc-txt">Cepsa加油→Keddy还车</span><span class="tc-meta">16:30</span></div><div class="tc-divider"></div><div class="tc-line"><span class="tc-emoji">✈️</span><span class="tc-txt">VY3209 TFN→BCN</span><span class="tc-meta">20:15→00:35+1</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">Taxi→机场酒店</span></div></div></div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">BAH Barcelona Airport Hotel</div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">还车前在Cepsa加油加满，保留小票。山区返程可能遇雾，预留2小时余裕时间</div><div class="tp-item">北部山区道路弯多且易起雾，建议预留2小时。如遇大雾开雾灯、慢速行驶，尽量在天黑前抵达机场</div><div class="tp-item">龙血树公园门票约5欧，可在旁边教堂广场免费观景台拍摄龙血树与泰德火山同框</div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">BAH Barcelona Airport Hotel</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://www.icodcanariasteide.com/en/parque-del-drago/" target="_blank">Parque del Drago 龙血树公园</a></div><div class="tk-note">门票约5欧，可在旁边教堂广场免费观景台拍摄龙血树与泰德火山同框</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">还车前在Cepsa加油加满，保留小票。山区返程可能遇雾，预留2小时余裕时间</div><div class="tp-item">北部山区道路弯多且易起雾，建议预留2小时。如遇大雾开雾灯、慢速行驶，尽量在天黑前抵达机场</div></div></div>
 </div></div>
 </div></div>
 </div>
@@ -300,6 +320,16 @@ a:hover{color:#FF6E00;text-decoration:underline}
 </div>
 
 <div class="ft">Spain Schengen Visa Itinerary 2026 · Barcelona · Tossa · Tenerife</div>
+
+<div class="emerg">
+<div class="emerg-h">🆘 Emergency Contacts · 紧急联系</div>
+<div class="emerg-item"><strong>欧洲通用紧急电话</strong>：112（医疗/消防/警察通用，免费拨打）</div>
+<div class="emerg-item"><strong>中国驻巴塞罗那总领馆领事保护</strong>：+34 932 547 070 / +34 688 090 556（24h）</div>
+<div class="emerg-item"><strong>中国外交部全球领事保护</strong>：+86 10 12308 / +86 10 65612308（24h）</div>
+<div class="emerg-item"><strong>巴塞罗那游客求助</strong>：010（市政热线，英语/西语）</div>
+<div class="emerg-item"><strong>特内里费紧急救援</strong>：112（加纳利群岛统一救援）</div>
+</div>
+<div class="ft">Spain Schengen Visa Itinerary 2026 · Barcelona · Tossa · Tenerife</div>
 </div>
 
 <script>
@@ -312,23 +342,34 @@ function showTab(i){
   for(var p of panels)p.classList.remove('active');
   tabs[i].classList.add('active');
   panels[i].classList.add('active');
+  try{localStorage.setItem('spain_tab',i)}catch(e){}
   window.scrollTo({top:0,behavior:'smooth'});
 }
 // Transport toggle
 function toggleTransport(el){
   el.parentElement.classList.toggle('collapsed');
 }
-// Touch swipe for mobile
-var tsx=0;
-document.addEventListener('touchstart',function(e){tsx=e.changedTouches[0].screenX},{passive:true});
+// Touch swipe for mobile — with direction guard to prevent false triggers
+var tsx=0,tsy=0;
+document.addEventListener('touchstart',function(e){tsx=e.changedTouches[0].screenX;tsy=e.changedTouches[0].screenY},{passive:true});
 document.addEventListener('touchend',function(e){
-  var d=tsx-e.changedTouches[0].screenX;
-  if(Math.abs(d)>60){
+  var dx=tsx-e.changedTouches[0].screenX;
+  var dy=tsy-e.changedTouches[0].screenY;
+  if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*2){
     var cur=document.querySelector('.tab.active');
     var idx=Array.from(document.querySelectorAll('.tab')).indexOf(cur);
-    showTab(d>0?idx+1:idx-1);
+    showTab(dx>0?idx+1:idx-1);
   }
 },{passive:true});
+// Restore last tab on load
+try{var saved=localStorage.getItem('spain_tab');if(saved!==null)showTab(parseInt(saved));}catch(e){}
+// Back-to-top button
+var btt=document.createElement('div');
+btt.innerHTML='↑';
+btt.style.cssText='position:fixed;bottom:20px;right:20px;width:40px;height:40px;border-radius:50%;background:#C5A572;color:#FFFCF7;font-size:1.4rem;font-weight:700;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(61,43,31,.3);z-index:200;transition:opacity .2s;user-select:none';
+btt.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+document.body.appendChild(btt);
+window.addEventListener('scroll',function(){btt.style.display=window.scrollY>400?'flex':'none'},{passive:true});
 </script>
 </body>
 </html>
