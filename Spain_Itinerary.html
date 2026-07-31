@@ -62,6 +62,22 @@ a:hover{color:#FF6E00;text-decoration:underline}
 .tc,.hc{font-size:.82rem;line-height:1.6;color:#1a1a2e}
 .tc strong,.hc strong{color:#8B6914}
 
+/* Transport interactive */
+.tc-wrap{margin-top:0}
+.tc-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;border-radius:5px;transition:background .2s;user-select:none}
+.tc-header:hover{background:#F5F0E8}
+.tc-header .tc-icon{font-size:.72rem;color:#8B6914;font-weight:700;letter-spacing:1px;display:flex;align-items:center;gap:5px}
+.tc-header .tc-arrow{font-size:.7rem;color:#8B6914;transition:transform .25s}
+.tc-wrap.collapsed .tc-arrow{transform:rotate(-90deg)}
+.tc-body{overflow:hidden;transition:max-height .3s ease,opacity .2s ease;max-height:500px;opacity:1}
+.tc-wrap.collapsed .tc-body{max-height:0;opacity:0}
+.tc-line{display:flex;align-items:center;gap:6px;padding:3px 8px;font-size:.78rem;line-height:1.4;border-radius:4px;transition:background .15s;margin:1px 0}
+.tc-line:hover{background:#FAF6F0}
+.tc-line .tc-emoji{font-size:.82rem;flex-shrink:0;width:18px;text-align:center}
+.tc-line .tc-txt{flex:1;color:#1a1a2e}
+.tc-line .tc-meta{font-size:.68rem;color:#8B6914;font-weight:600;flex-shrink:0}
+.tc-divider{height:1px;background:#E8DFD3;margin:4px 8px}
+
 .box{border-radius:5px;padding:8px 10px;margin-top:8px}
 .tk{background:#FFF8EE;border:1.5px solid #C5A572}
 .tk-h{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#8B6914;font-weight:800;margin-bottom:4px;display:flex;align-items:center;gap:4px}
@@ -113,6 +129,12 @@ a:hover{color:#FF6E00;text-decoration:underline}
   .tl-txt{font-size:.76rem;line-height:1.45}
   .tl-dot{width:6px;height:6px;margin-top:4px}
   .tc,.hc{font-size:.74rem;line-height:1.4}
+  .tc-header{padding:4px 6px}
+  .tc-header .tc-icon{font-size:.64rem}
+  .tc-line{font-size:.7rem;padding:2px 6px;gap:4px}
+  .tc-line .tc-emoji{font-size:.72rem;width:16px}
+  .tc-line .tc-meta{font-size:.6rem}
+  .tc-divider{margin:3px 6px}
   .w-note{font-size:.68rem;padding:3px 8px;margin-top:4px}
   .box{padding:6px 8px;margin-top:6px;border-radius:4px}
   .tk-h,.tp-h{font-size:.6rem;margin-bottom:3px}
@@ -145,115 +167,113 @@ a:hover{color:#FF6E00;text-decoration:underline}
 <div class="card"><div class="card-top"><span class="dt">Sep 30 Wed</span><span class="wb">⛅ Barcelona 20-26°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
-<div class="tl-item"><span class="tl-time">08:00</span><span class="tl-dot"></span><span class="tl-txt">抵达巴塞罗那机场（BCN），办理入境并提取行李</span></div>
-<div class="tl-item"><span class="tl-time">09:30</span><span class="tl-dot"></span><span class="tl-txt">Niza Cars 取车后开往 The Hoxton 酒店，寄存行李、车辆入库</span></div>
-<div class="tl-item"><span class="tl-time">10:30</span><span class="tl-dot"></span><span class="tl-txt">地铁L1红线 → 加泰罗尼亚广场（Plaça de Catalunya）</span></div>
-<div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">兰布拉大道（La Rambla）·博盖利亚市场（La Boqueria）品尝火腿与水果·哥特区（Gothic Quarter）巷弄探幽，驻足巴塞罗那大教堂（Cathedral of Barcelona）</span></div>
-<div class="tl-item"><span class="tl-time">14:40</span><span class="tl-dot"></span><span class="tl-txt">回酒店办理入住，换轻便衣物休整恢复精力</span></div>
-<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">巴特罗之家（Casa Batlló）AR 智能导览，感受"海洋大厅"与龙脊天台</span></div>
-<div class="tl-item"><span class="tl-time">18:45</span><span class="tl-dot"></span><span class="tl-txt">沿格拉西亚大道步行6min→米拉之家（Casa Milà），天台"外星人烟囱"与日落金光绝佳机位</span></div>
-<div class="tl-item"><span class="tl-time">20:45</span><span class="tl-dot"></span><span class="tl-txt">El Nacional 美食大厅晚餐，饭后赏双公寓亮灯魔幻夜景</span></div>
-</div><div class="w-note">📌 步行舒适，正午防晒</div></div>
-<div><div class="col-h">Transport</div><div class="tc">CA839 PVG 01:00→BCN 07:55<br>Niza Cars 08:30取车<br>酒店停车，全程公交<br>L1线 / X1路 / 步行</div></div>
+<div class="tl-item"><span class="tl-time">08:00</span><span class="tl-dot"></span><span class="tl-txt">抵达<a href="https://www.google.com/maps/search/?api=1&query=Barcelona+El+Prat+Airport" target="_blank">巴塞罗那机场（BCN）</a>，打车至<a href="https://www.google.com/maps/search/?api=1&query=The+Hoxton+Barcelona" target="_blank">The Hoxton 酒店</a>，寄存行李，在周边社区简餐咖啡</span></div>
+<div class="tl-item"><span class="tl-time">10:30</span><span class="tl-dot"></span><span class="tl-txt">从酒店打车前往<a href="https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a+de+Catalunya" target="_blank">加泰罗尼亚广场</a>，开启步行游览：漫步<a href="https://www.google.com/maps/search/?api=1&query=La+Rambla+Barcelona" target="_blank">兰布拉大道</a>（途经<a href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria" target="_blank">博盖利亚市场</a>）→ 穿梭<a href="https://www.google.com/maps/search/?api=1&query=Barri+G%C3%B2tic+Barcelona" target="_blank">哥特区</a>巷弄，驻足<a href="https://www.google.com/maps/search/?api=1&query=Catedral+de+Barcelona" target="_blank">巴塞罗那大教堂</a></span></div>
+<div class="tl-item"><span class="tl-time">12:30</span><span class="tl-dot"></span><span class="tl-txt">步行至相邻的<a href="https://www.google.com/maps/search/?api=1&query=El+Born+Barcelona" target="_blank">波恩区（El Born）</a>，穿梭中世纪小巷，探索独立设计师店、皮革珠宝工坊，在周边享用午餐</span></div>
+<div class="tl-item"><span class="tl-time">14:30</span><span class="tl-dot"></span><span class="tl-txt">从波恩区打车回<a href="https://www.google.com/maps/search/?api=1&query=The+Hoxton+Barcelona" target="_blank">The Hoxton 酒店</a>，办理入住，洗漱换轻便衣物，深度休整恢复精力</span></div>
+<div class="tl-item"><span class="tl-time">16:00</span><span class="tl-dot"></span><span class="tl-txt">从酒店打车至<a href="https://www.google.com/maps/search/?api=1&query=Casa+Batll%C3%B3" target="_blank">巴特罗之家（Casa Batlló）</a>（16:30入场），体验 AR 智能导览，感受"海洋大厅"与龙脊天台</span></div>
+<div class="tl-item"><span class="tl-time">18:45</span><span class="tl-dot"></span><span class="tl-txt">沿格拉西亚大道步行6min至<a href="https://www.google.com/maps/search/?api=1&query=Casa+Mil%C3%A0+La+Pedrera" target="_blank">米拉之家（Casa Milà）</a>，绝佳机位捕捉天台"外星人烟囱"与日落金光</span></div>
+<div class="tl-item"><span class="tl-time">20:45</span><span class="tl-dot"></span><span class="tl-txt">在格拉西亚大道周边享用晚餐，饭后赏双公寓亮灯魔幻夜景，结束后打车回酒店</span></div>
+</div><div class="w-note">📌 打车+步行组合，正午防晒，双公寓须提前预约</div></div>
+<div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">🚗 Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">✈️</span><span class="tc-txt">CA839 PVG 01:00→BCN 07:55</span></div><div class="tc-divider"></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">BCN机场→酒店</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">酒店→加泰罗尼亚广场</span></div><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">兰布拉→哥特区→波恩区</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">波恩区→酒店</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">酒店→巴特罗之家</span></div><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">→米拉之家</span><span class="tc-meta">6min</span></div><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">周边晚餐</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">回酒店</span></div></div></div></div>
 <div><div class="col-h">Stay & Notes</div><div class="hc">The Hoxton, Poblenou</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://casabatllo.es/en/tickets/" target="_blank">Casa Batlló</a></div><div class="tk-note">预约16:30时段，含AR智能导览耳机，沉浸式体验"海洋大厅"彩窗与龙脊屋顶</div><div class="tk-item">🔗 <a href="https://www.lapedrera.com/en/tickets" target="_blank">Casa Milà</a></div><div class="tk-note">预约18:45即黄昏前入场，登天台赏"外星人烟囱"与日落金光洗礼全城</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">哥特区巷弄狭窄拥挤，包背胸前、手机勿放后袋，警惕摩洛哥小店换假币</div><div class="tp-item">双公寓人流密集，禁背双肩包以防被拉开，贵重物品留酒店保险箱</div></div></div>
 </div></div>
 <div class="card"><div class="card-top"><span class="dt">Oct 1 Thu</span><span class="wb">☀️ Barcelona 19-25°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
-<div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">打车→桂尔公园（Park Güell），09:30首批入场，漫步百柱厅与波浪马赛克长椅</span></div>
-<div class="tl-item"><span class="tl-time">12:00</span><span class="tl-dot"></span><span class="tl-txt">公交V19→圣家堂（Sagrada Família），正午阳光穿透彩绘玻璃，"天堂光影"最佳时刻</span></div>
-<div class="tl-item"><span class="tl-time">14:00</span><span class="tl-dot"></span><span class="tl-txt">圣高迪大道（Avinguda de Gaudí）露天午餐，推荐墨鱼汁海鲜饭</span></div>
-<div class="tl-item"><span class="tl-time">15:30</span><span class="tl-dot"></span><span class="tl-txt">地铁L2紫线→Paral·lel → 蒙特惠奇缆车（Funicular de Montjuïc）</span></div>
-<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">蒙特惠奇城堡（Castell de Montjuïc）360°俯瞰全城与海港，拍奥林匹克体育场下山</span></div>
-<div class="tl-item"><span class="tl-time">18:30</span><span class="tl-dot"></span><span class="tl-txt">顺山路步行下山赏名山日落与晚霞</span></div>
-<div class="tl-item"><span class="tl-time">19:30</span><span class="tl-dot"></span><span class="tl-txt">西班牙广场（Plaça d'Espanya）Arenas斗牛场天台晚餐，鸟瞰国家宫灿烂夜景</span></div>
-<div class="tl-item"><span class="tl-time">21:00</span><span class="tl-dot"></span><span class="tl-txt">地铁L1红线直达回酒店 Glòries 站</span></div>
-</div><div class="w-note">📌 圣家堂光影最佳，山顶风大需外套</div></div>
-<div><div class="col-h">Transport</div><div class="tc">出租车 / V19路<br>L2线（紫）<br>蒙特惠奇缆车<br>L1线（红）回</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">The Hoxton, Poblenou</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://parkguell.barcelona/en/tickets" target="_blank">Park Güell</a></div><div class="tk-note">预约09:30首批入场，避开旅游团高峰，百柱厅与波浪长椅拍照零等待</div><div class="tk-item">🔗 <a href="https://sagradafamilia.org/en/tickets" target="_blank">Sagrada Família</a></div><div class="tk-note">预约12:00时段，正午阳光穿透彩绘玻璃"天堂光影"最佳，含登塔体验</div><div class="tk-item">🔗 <a href="https://www.barcelonabusturistic.cat/en/montjuic-cable-car" target="_blank">Castell de Montjuïc</a></div><div class="tk-note">可选购缆车票直达山顶城堡，省去爬山体力，时间充裕可步行下山</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">早晚温差达10°C，带轻外套与折叠雨伞，山顶风大需抓绒衣</div><div class="tp-item">圣家堂、桂尔公园、双公寓现场均不售票，须提前官网预约指定时段，购票后不可改期</div></div></div>
+<div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">从酒店打车直达山上入口前往<a href="https://www.google.com/maps/search/?api=1&query=Park+G%C3%BCell" target="_blank">桂尔公园（Park Güell）</a>（09:30首批入场），漫步百柱厅与波浪马赛克长椅</span></div>
+<div class="tl-item"><span class="tl-time">11:30</span><span class="tl-dot"></span><span class="tl-txt">从桂尔公园打车至<a href="https://www.google.com/maps/search/?api=1&query=Sagrada+Fam%C3%ADlia" target="_blank">圣家堂（Sagrada Família）</a>（约12:15入场），沉浸体验正午阳光穿透彩绘玻璃的"天堂光影"最佳时刻</span></div>
+<div class="tl-item"><span class="tl-time">14:00</span><span class="tl-dot"></span><span class="tl-txt">步行前往<a href="https://www.google.com/maps/search/?api=1&query=Avinguda+de+Gaud%C3%AD+Barcelona" target="_blank">圣高迪大道（Avinguda de Gaudí）</a>露天午餐</span></div>
+<div class="tl-item"><span class="tl-time">15:00</span><span class="tl-dot"></span><span class="tl-txt">从圣高迪大道打车前往<a href="https://www.google.com/maps/search/?api=1&query=L%27Illa+Diagonal+Shopping+Center" target="_blank">L'Illa Diagonal 购物中心</a>，感受现代商务氛围，逛高端买手店及本地轻奢品牌</span></div>
+<div class="tl-item"><span class="tl-time">17:30</span><span class="tl-dot"></span><span class="tl-txt">从购物中心打车直达山顶的<a href="https://www.google.com/maps/search/?api=1&query=Castell+de+Montju%C3%AFc" target="_blank">蒙特惠奇城堡（Castell de Montjuïc）</a>，360°俯瞰全城与海港</span></div>
+<div class="tl-item"><span class="tl-time">19:15</span><span class="tl-dot"></span><span class="tl-txt">顺山路步行下山，途经<a href="https://www.google.com/maps/search/?api=1&query=Estadi+Ol%C3%ADmpic+Llu%C3%ADs+Companys" target="_blank">奥林匹克体育场</a>，边走边拍，欣赏名山日落与晚霞</span></div>
+<div class="tl-item"><span class="tl-time">20:00</span><span class="tl-dot"></span><span class="tl-txt">步行至西班牙广场的<a href="https://www.google.com/maps/search/?api=1&query=Arenas+de+Barcelona+Pla%C3%A7a+d%27Espanya" target="_blank">Arenas 斗牛场</a>天台晚餐，鸟瞰国家宫灿烂夜景，结束后打车返回酒店</span></div>
+</div><div class="w-note">📌 圣家堂正午光影最佳，蒙特惠奇山顶风大需外套</div></div>
+<div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">🚗 Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">酒店→桂尔公园</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">桂尔公园→圣家堂</span></div><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">→圣高迪大道午餐</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">→L'Illa Diagonal</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">→蒙特惠奇城堡</span></div><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">下山→奥林匹克体育场</span></div><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">→Arenas斗牛场</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">回酒店</span></div></div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">The Hoxton, Poblenou</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://parkguell.barcelona/en/tickets" target="_blank">Park Güell</a></div><div class="tk-note">预约09:30首批入场，避开旅游团高峰，百柱厅与波浪长椅拍照零等待</div><div class="tk-item">🔗 <a href="https://sagradafamilia.org/en/tickets" target="_blank">Sagrada Família</a></div><div class="tk-note">预约12:15时段，正午阳光穿透彩绘玻璃"天堂光影"最佳，含登塔体验</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">早晚温差达10°C，带轻外套与折叠雨伞，蒙特惠奇山顶风大需抓绒衣</div><div class="tp-item">圣家堂、桂尔公园、双公寓现场均不售票，须提前官网预约指定时段，购票后不可改期</div></div></div>
 </div></div>
 </div></div>
 </div>
 
 <div class="tab-panel" id="panel1">
 <div class="sec p1"><div class="sec-bar">Tossa <span class="cn">布拉瓦海岸 · Day 3–4</span></div><div class="sec-body">
-<div class="card"><div class="card-top"><span class="dt">Oct 2 Fri</span><span class="wb">☀️ Tossa 18-24°C</span></div>
+<div class="card"><div class="card-top"><span class="dt">Oct 2 Fri</span><span class="wb">☀️ Costa Brava 18-24°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
-<div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">巴塞罗那退房出发，自驾北上全程65km→布拉内斯（Blanes）</span></div>
-<div class="tl-item"><span class="tl-time">12:30</span><span class="tl-dot"></span><span class="tl-txt">布拉内斯港口海鲜大餐，铁板海鲜拼盘（Parrillada）与墨鱼汁饭（Arròs Negre）</span></div>
-<div class="tl-item"><span class="tl-time">14:15</span><span class="tl-dot"></span><span class="tl-txt">马里穆尔特拉植物园（Jardí Botànic Marimurtra），悬崖上海景仙人掌林·林奈神庙（Temple de Linné）白色石柱与深蓝地中海</span></div>
-<div class="tl-item"><span class="tl-time">15:45</span><span class="tl-dot"></span><span class="tl-txt">驾驶 GI-682 最美沿海公路，阳光洒海面波光粼粼，25min抵达托萨</span></div>
-<div class="tl-item"><span class="tl-time">16:15</span><span class="tl-dot"></span><span class="tl-txt">入住 Zel Tossa 度假村，阳台吹海风换海滩装</span></div>
-<div class="tl-item"><span class="tl-time">17:15</span><span class="tl-dot"></span><span class="tl-txt">托萨古城墙（Muralles de Tossa）·大沙滩（Platja Gran）·灯塔（Far de Tossa）在悬崖咖啡厅迎接19:30地中海日落</span></div>
-<div class="tl-item"><span class="tl-time">19:30</span><span class="tl-dot"></span><span class="tl-txt">Restaurant Tursia 古城墙下晚餐，饭后散步赏中世纪城墙亮灯夜景</span></div>
-</div><div class="w-note">📌 海风微凉，古城日落完美</div></div>
-<div><div class="col-h">Transport</div><div class="tc">自驾 BCN→Blanes 1h<br>GI-682→Tossa 25min<br>步行</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">Zel Tossa, Tossa de Mar</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://www.marimurtra.cat/en/tickets/" target="_blank">Marimurtra 植物园</a></div><div class="tk-note">提前官网购票，现场不售票。悬崖仙人掌林与白色石柱神庙是拍照绝佳机位</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">GI-682沿海公路弯道多且无护栏，注意控速。周末返程预留2小时应对路况</div><div class="tp-item">托萨古城墙与海湾均免费开放，灯塔最佳拍照时间为黄昏前30分钟金光最柔</div></div></div>
+<div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">巴塞罗那酒店退房/取车，自驾北上全程约65km、车程1h→<a href="https://www.google.com/maps/search/?api=1&query=Blanes+Spain" target="_blank">布拉内斯（Blanes）</a></span></div>
+<div class="tl-item"><span class="tl-time">12:15</span><span class="tl-dot"></span><span class="tl-txt">驾车直达<a href="https://www.google.com/maps/search/?api=1&query=Port+de+Blanes" target="_blank">布拉内斯港口（Port de Blanes）</a>附近海鲜午餐，用时1h</span></div>
+<div class="tl-item"><span class="tl-time">13:15</span><span class="tl-dot"></span><span class="tl-txt">驱车5min前往<a href="https://www.google.com/maps/search/?api=1&query=Jard%C3%AD+Bot%C3%A0nic+Marimurtra" target="_blank">马里穆尔特拉植物园（Jardí Botànic Marimurtra）</a>，2.5h深度游览：漫步亚热带区与悬崖仙人掌林·<a href="https://www.google.com/maps/search/?api=1&query=Temple+de+Linn%C3%A9+Marimurtra" target="_blank">林奈神庙（Temple de Linné）</a>白色石柱下多角度打卡留影深蓝地中海·沿悬崖栈道走完完整环线观景台</span></div>
+<div class="tl-item"><span class="tl-time">16:00</span><span class="tl-dot"></span><span class="tl-txt">驾驶 GI-682 沿海景观公路约25min，地中海下午阳光洒海面波光粼粼</span></div>
+<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">抵达<a href="https://www.google.com/maps/search/?api=1&query=Zel+Costa+Brava+Tossa" target="_blank">Zel Costa Brava 度假村</a>办理入住，换海滩装或轻便衣物休息</span></div>
+<div class="tl-item"><span class="tl-time">17:30</span><span class="tl-dot"></span><span class="tl-txt">驱车前往托萨镇中心停车，漫步<a href="https://www.google.com/maps/search/?api=1&query=Platja+Gran+Tossa+de+Mar" target="_blank">大沙滩（Platja Gran）</a>与<a href="https://www.google.com/maps/search/?api=1&query=Muralles+de+Tossa" target="_blank">托萨古城墙（Muralles de Tossa）</a>；登上<a href="https://www.google.com/maps/search/?api=1&query=Cap+de+Tossa+Far+de+Tossa" target="_blank">Cap de Tossa 灯塔</a>悬崖观景台，迎接19:30地中海晚霞与日落</span></div>
+<div class="tl-item"><span class="tl-time">19:30</span><span class="tl-dot"></span><span class="tl-txt">古城墙下享用晚餐。饭后散步欣赏亮灯的中世纪古城墙夜景，随后驾车返回度假村</span></div>
+</div><div class="w-note">📌 海风微凉，悬崖植物园留足2.5h，古城日落完美</div></div>
+<div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">🚗 Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">BCN→Blanes</span><span class="tc-meta">1h</span></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">Blanes→植物园</span><span class="tc-meta">5min</span></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">GI-682→Tossa</span><span class="tc-meta">25min</span></div><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">镇内步行</span></div></div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">Zel Costa Brava, Tossa de Mar</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://www.marimurtra.cat/en/tickets/" target="_blank">Marimurtra 植物园</a></div><div class="tk-note">提前官网购票，现场不售票。2.5h充裕时间走完悬崖环线，林奈神庙白色石柱是拍照绝佳机位</div><div class="tk-item">🔗 <a href="https://www.google.com/maps/search/?api=1&query=Cap+de+Tossa+Far+de+Tossa" target="_blank">📍 灯塔悬崖观景台</a></div><div class="tk-note">最佳日落观景位，建议17:30前抵达，19:30日落金光最柔</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">GI-682沿海公路弯道多且无护栏，注意控速。周末返程预留2小时应对路况</div><div class="tp-item">托萨古城墙与海湾均免费开放，灯塔最佳拍照时间为黄昏前30分钟金光最柔</div></div></div>
 </div></div>
 <div class="card"><div class="card-top"><span class="dt">Oct 3 Sat</span><span class="wb">☀️ Tossa 17-23°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
-<div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">度假村早餐，沿私密海湾 Cala Giverola 散步</span></div>
-<div class="tl-item"><span class="tl-time">11:30</span><span class="tl-dot"></span><span class="tl-txt">徒步 Cala Pola 翡翠海湾，V字形天然海湾海水如翡翠绿，沿国王步道（Camí de Ronda）拍静谧海景</span></div>
-<div class="tl-item"><span class="tl-time">13:30</span><span class="tl-dot"></span><span class="tl-txt">托萨老街 Tapas 简餐，番茄面包与炸小红鱼</span></div>
-<div class="tl-item"><span class="tl-time">15:00</span><span class="tl-dot"></span><span class="tl-txt">自驾返回巴塞罗那机场（105km，预留2h应对周末路况）</span></div>
-<div class="tl-item"><span class="tl-time">17:00</span><span class="tl-dot"></span><span class="tl-txt">Galp 加油加满保留小票</span></div>
-<div class="tl-item"><span class="tl-time">17:30</span><span class="tl-dot"></span><span class="tl-txt">Niza Cars 还车，搭接驳车前往航站楼</span></div>
-<div class="tl-item"><span class="tl-time">19:55</span><span class="tl-dot"></span><span class="tl-txt">VY3214 巴塞罗那（BCN）→ 特内里费北（TFN）</span></div>
-<div class="tl-item"><span class="tl-time">22:25</span><span class="tl-dot"></span><span class="tl-txt">抵达 TFN，Keddy 取车后开车前往南部酒店</span></div>
-</div><div class="w-note">📌 海湾清澈出片，路况良好</div></div>
-<div><div class="col-h">Transport</div><div class="tc">自驾 Tossa→BCN 2h<br>Niza 还车 17:30<br>VY3214 BCN 19:55→TFN 22:25<br>Keddy 取车 23:00</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">Tivoli la Caleta Resort, Costa Adeje</div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">周末高速车多，返程预留2h。还车前拍照保留加油小票，丢失需自费赔偿</div><div class="tp-item">机场还车点在S2停车场层，搭接驳车5min到航站楼</div></div></div>
+<div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">睡到自然醒，在度假村享用早餐彻底放松。11:00前办理退房，将行李放入车内</span></div>
+<div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">从度假村/Cala Giverola出发，沿<a href="https://www.google.com/maps/search/?api=1&query=Cam%C3%AD+de+Ronda+Tossa+de+Mar" target="_blank">国王步道（Camí de Ronda）</a>徒步至<a href="https://www.google.com/maps/search/?api=1&query=Cala+Pola+Tossa+de+Mar" target="_blank">Cala Pola 翡翠海湾</a>，欣赏V字形天然海湾与碧绿海水，拍照后返回车上</span></div>
+<div class="tl-item"><span class="tl-time">12:45</span><span class="tl-dot"></span><span class="tl-txt">驱车10min前往<a href="https://www.google.com/maps/search/?api=1&query=Tossa+de+Mar+old+town" target="_blank">托萨老镇</a>，在老街享用午餐</span></div>
+<div class="tl-item"><span class="tl-time">14:00</span><span class="tl-dot"></span><span class="tl-txt">从托萨驱车返回<a href="https://www.google.com/maps/search/?api=1&query=Barcelona+El+Prat+Airport" target="_blank">巴塞罗那机场（BCN）</a>，全程约105km，预留约2h应对周末路况</span></div>
+<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">在机场附近的<a href="https://www.google.com/maps/search/?api=1&query=Galp+gas+station+near+Barcelona+Airport" target="_blank">Galp 加油站</a>加满油（保留小票），随后开往 Niza Cars 还车点</span></div>
+<div class="tl-item"><span class="tl-time">17:30</span><span class="tl-dot"></span><span class="tl-txt">Niza Cars 还车，搭乘接驳车前往航站楼</span></div>
+<div class="tl-item"><span class="tl-time">19:55</span><span class="tl-dot"></span><span class="tl-txt">伏林航空 VY3214 航班 BCN 19:55 → <a href="https://www.google.com/maps/search/?api=1&query=Tenerife+North+Airport+TFN" target="_blank">特内里费北机场（TFN）</a> 22:25</span></div>
+<div class="tl-item"><span class="tl-time">22:25</span><span class="tl-dot"></span><span class="tl-txt">抵达 TFN，前往<a href="https://www.google.com/maps/search/?api=1&query=Keddy+car+rental+Tenerife+North+Airport" target="_blank">Keddy 柜台</a>办理取车，自驾沿 TF-1 高速公路开往特内里费南部酒店办理入住</span></div>
+</div><div class="w-note">📌 海湾清澈出片，徒步穿舒适鞋，周末返程预留2h</div></div>
+<div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">🚗 Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">🚶</span><span class="tc-txt">Camí de Ronda 徒步往返</span></div><div class="tc-divider"></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">Tossa→BCN</span><span class="tc-meta">~2h</span></div><div class="tc-line"><span class="tc-emoji">⛽</span><span class="tc-txt">Galp加油→Niza还车</span><span class="tc-meta">17:30</span></div><div class="tc-divider"></div><div class="tc-line"><span class="tc-emoji">✈️</span><span class="tc-txt">VY3214 BCN→TFN</span><span class="tc-meta">19:55→22:25</span></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">Keddy取车→TF-1→南部酒店</span></div></div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">Tivoli la Caleta Resort, Costa Adeje</div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">国王步道徒步往返约1.5h，穿舒适徒步鞋、带充足饮水。翡翠海湾无设施，拍照注意安全</div><div class="tp-item">周末高速车多，返程预留2h。还车前拍照保留加油小票，丢失需自费赔偿</div><div class="tp-item">机场还车点在S2停车场层，搭接驳车5min到航站楼。TFN抵达后自驾TF-1约1h到南部酒店</div></div></div>
 </div></div>
 </div></div>
 </div>
 
 <div class="tab-panel" id="panel2">
 <div class="sec p2"><div class="sec-bar">Tenerife <span class="cn">特内里费岛 · Day 5–7</span></div><div class="sec-body">
-<div class="card"><div class="card-top"><span class="dt">Oct 4 Sun</span><span class="wb">☀️ Teide 5-12°C 山顶</span></div>
+<div class="card"><div class="card-top"><span class="dt">Oct 4 Sun</span><span class="wb">☀️ Tenerife S 22-28°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
-<div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">Tivoli 早餐，10:30 退房装行李出发</span></div>
-<div class="tl-item"><span class="tl-time">10:30</span><span class="tl-dot"></span><span class="tl-txt">自驾 TF-38 公路穿越加那利松林·攀升至云海之上的黑色火星荒漠</span></div>
-<div class="tl-item"><span class="tl-time">12:00</span><span class="tl-dot"></span><span class="tl-txt">泰德峰缆车（Teleférico del Teide）8min飙升至 3555m 观景台，沿12号步道（Pico Viejo）漫步火山喷发口，俯瞰大西洋海岛全景</span></div>
-<div class="tl-item"><span class="tl-time">14:30</span><span class="tl-dot"></span><span class="tl-txt">缆车基地餐厅简餐充饥</span></div>
-<div class="tl-item"><span class="tl-time">15:30</span><span class="tl-dot"></span><span class="tl-txt">罗克·德·加西亚巨石群（Roques de García）近距离打卡"上帝手指"奇石</span></div>
-<div class="tl-item"><span class="tl-time">18:00</span><span class="tl-dot"></span><span class="tl-txt">驾车前往观星集合点，夕阳将云海染成壮丽粉橙色</span></div>
-<div class="tl-item"><span class="tl-time">19:30</span><span class="tl-dot"></span><span class="tl-txt">专业向导领队，高倍望远镜观测银河、星团与土星光环，肉眼可见繁星满天</span></div>
-<div class="tl-item"><span class="tl-time">21:30</span><span class="tl-dot"></span><span class="tl-txt">TF-38 慢速下山 50min → 丽思卡尔顿（The Ritz-Carlton Abama）入住</span></div>
-</div><div class="w-note">📌 峰顶寒冷，观星夜间极度清晰</div></div>
-<div><div class="col-h">Transport</div><div class="tc">自驾 TF-38<br>缆车（须提前预约12:00）<br>夜间慢速下山</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">The Ritz-Carlton Tenerife, Abama</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://www.volcanoteide.com/en/cable_car" target="_blank">Teide 缆车</a></div><div class="tk-note">预约12:00时段缆车升顶，须提前1月预约。10月为观星旺季，票量紧张</div><div class="tk-item">🔗 <a href="https://www.volcanoteide.com/en/stargazing" target="_blank">Teide 日落观星团</a></div><div class="tk-note">专业向导领队，高倍望远镜观测银河与土星光环，肉眼可见繁星满天</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">TF-38夜间无路灯无护栏，仅靠车灯，严禁超速。建议夜间下山速度不超40km/h</div><div class="tp-item">缆车与观星团均需提前1月预约，10月为观星旺季票量紧张。峰顶气温仅5°C，必备冲锋衣与抓绒衣</div></div></div>
-</div></div>
-<div class="card"><div class="card-top"><span class="dt">Oct 5 Mon</span><span class="wb">☀️ Tenerife S 22-28°C</span></div>
-<div class="grid">
-<div><div class="col-h">Itinerary</div><div class="tl">
-<div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">丽思卡尔顿粉红城堡度假村享用顶级自助早餐，换泳装防晒出海</span></div>
-<div class="tl-item"><span class="tl-time">11:30</span><span class="tl-dot"></span><span class="tl-txt">开车15min→科隆港口（Puerto Colón）</span></div>
-<div class="tl-item"><span class="tl-time">12:00</span><span class="tl-dot"></span><span class="tl-txt">豪华双体帆船（Catamaran）出海观鲸 3h，近距离观赏领航鲸与海豚嬉戏，船尾果冻湾游泳</span></div>
-<div class="tl-item"><span class="tl-time">15:00</span><span class="tl-dot"></span><span class="tl-txt">下船后开车20min→巨人悬崖（Los Gigantes）</span></div>
-<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">500m黑色火山断崖垂直插入大西洋，配合纯黑火山沙滩（Platja de la Arena）呈魔幻末日美感</span></div>
-<div class="tl-item"><span class="tl-time">18:30</span><span class="tl-dot"></span><span class="tl-txt">悬崖海景餐厅享用加那利海鲜晚餐</span></div>
-<div class="tl-item"><span class="tl-time">20:00</span><span class="tl-dot"></span><span class="tl-txt">驾车15min返回丽思卡尔顿</span></div>
+<div class="tl-item"><span class="tl-time">09:30</span><span class="tl-dot"></span><span class="tl-txt">睡到自然醒，在 Tivoli 酒店享用早餐彻底补觉恢复精力。11:00 办理退房，行李装车</span></div>
+<div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">驱车5-10min直达<a href="https://www.google.com/maps/search/?api=1&query=Puerto+Col%C3%B3n+Tenerife" target="_blank">科隆港口（Puerto Colón）</a>停好车，11:30 办理登船</span></div>
+<div class="tl-item"><span class="tl-time">12:00</span><span class="tl-dot"></span><span class="tl-txt">豪华双体帆船出海观鲸3h，近距离观赏领航鲸与海豚嬉戏，船尾停靠果冻湾游泳，享用海风与阳光</span></div>
+<div class="tl-item"><span class="tl-time">15:00</span><span class="tl-dot"></span><span class="tl-txt">下船后自驾20min前往<a href="https://www.google.com/maps/search/?api=1&query=Acantilados+de+Los+Gigantes" target="_blank">巨人悬崖（Los Gigantes）</a>，打卡500m垂直入海的火山断崖，并在<a href="https://www.google.com/maps/search/?api=1&query=Playa+de+la+Arena+Tenerife" target="_blank">Platja de la Arena 纯黑沙滩</a>踏浪</span></div>
+<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">自驾15min抵达<a href="https://www.google.com/maps/search/?api=1&query=The+Ritz-Carlton+Tenerife+Abama" target="_blank">阿巴马丽思卡尔顿酒店（The Ritz-Carlton Abama）</a>办理入住休整</span></div>
+<div class="tl-item"><span class="tl-time">17:30</span><span class="tl-dot"></span><span class="tl-txt">在 Los Gigantes 或度假村附近享用海景晚餐</span></div>
+<div class="tl-item"><span class="tl-time">19:30</span><span class="tl-dot"></span><span class="tl-txt">搭乘酒店专属小火车前往<a href="https://www.google.com/maps/search/?api=1&query=Playa+de+Abama" target="_blank">Playa de Abama 隐秘海滩</a>踩沙听浪，早点休息为次日高山蓄能</span></div>
 </div><div class="w-note">📌 海面微风，鲸鱼活跃，午后防晒</div></div>
-<div><div class="col-h">Transport</div><div class="tc">自驾 / 步行<br>→科隆港口 15min<br>→巨人悬崖 20min<br>帆船须预约12:00</div></div>
+<div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">🚗 Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">Tivoli→科隆港口</span><span class="tc-meta">5-10min</span></div><div class="tc-line"><span class="tc-emoji">⛵</span><span class="tc-txt">双体帆船出海观鲸</span><span class="tc-meta">12:00 / 3h</span></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">→巨人悬崖</span><span class="tc-meta">20min</span></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">→丽思卡尔顿</span><span class="tc-meta">15min</span></div><div class="tc-line"><span class="tc-emoji">🚂</span><span class="tc-txt">小火车→Abama海滩</span></div></div></div></div>
 <div><div class="col-h">Stay & Notes</div><div class="hc">The Ritz-Carlton Tenerife, Abama</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://whitetenerife.com/" target="_blank">White Tenerife 双体帆船</a></div><div class="tk-note">预约12:00出海，含午餐与泳装。豪华双体船近距离观赏领航鲸与海豚嬉戏</div><div class="tk-item">🔗 <a href="https://biosean.com/en/" target="_blank">Biosean 生态观鲸</a></div><div class="tk-note">小船生态观鲸，不资助人工喂饵，更贴近自然，适合亲子家庭</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">出海前涂高倍防晒霜，备好泳装与浴巾。船上提供免费饮品与Tapas，另带晕船药</div><div class="tp-item">巨人悬崖下黑沙滩午后沙温可达50°C，建议穿涉水鞋。悬崖观景台风大，注意帽子</div></div></div>
+</div></div>
+<div class="card"><div class="card-top"><span class="dt">Oct 5 Mon</span><span class="wb">☀️ Teide 5-12°C 山顶</span></div>
+<div class="grid">
+<div><div class="col-h">Itinerary</div><div class="tl">
+<div class="tl-item"><span class="tl-time">09:30</span><span class="tl-dot"></span><span class="tl-txt">享用丽思卡尔顿顶级自助早餐，私人海滩漫步。准备好保暖外套/羽绒服（高山夜间约0~5°C）</span></div>
+<div class="tl-item"><span class="tl-time">11:30</span><span class="tl-dot"></span><span class="tl-txt">沿<a href="https://www.google.com/maps/search/?api=1&query=TF-38+Tenerife" target="_blank">TF-38 景观公路</a>盘山而上（车程约1h15m），穿越加那利松林与黑色火山岩观景台</span></div>
+<div class="tl-item"><span class="tl-time">12:45</span><span class="tl-dot"></span><span class="tl-txt">抵达<a href="https://www.google.com/maps/search/?api=1&query=Telef%C3%A9rico+del+Teide" target="_blank">泰德峰缆车站（Teleférico del Teide）</a>（需提前预约13:00或13:30），8min飙升至3555m观景台，漫步12号步道俯瞰火山口与大西洋</span></div>
+<div class="tl-item"><span class="tl-time">15:15</span><span class="tl-dot"></span><span class="tl-txt">在缆车基地简餐充饥，喝杯热咖啡补充体力</span></div>
+<div class="tl-item"><span class="tl-time">16:00</span><span class="tl-dot"></span><span class="tl-txt">驱车5min前往<a href="https://www.google.com/maps/search/?api=1&query=Roques+de+Garc%C3%ADa+Teide" target="_blank">Roques de García 巨石群</a>，近距离打卡<a href="https://www.google.com/maps/search/?api=1&query=Roque+Cinchado+Tenerife" target="_blank">Roque Cinchado 奇石</a>并漫步步道</span></div>
+<div class="tl-item"><span class="tl-time">17:30</span><span class="tl-dot"></span><span class="tl-txt">前往观星集合点，欣赏夕阳将云海染成粉橙色。19:30专业向导领队，通过高倍望远镜观测银河、星团与土星光环</span></div>
+<div class="tl-item"><span class="tl-time">21:30</span><span class="tl-dot"></span><span class="tl-txt">沿 TF-38 慢速驾车下山50min，返回丽思卡尔顿休息</span></div>
+</div><div class="w-note">📌 峰顶寒冷，观星夜间极度清晰</div></div>
+<div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">🚗 Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">TF-38盘山上山</span><span class="tc-meta">~1h15m</span></div><div class="tc-line"><span class="tc-emoji">🚡</span><span class="tc-txt">泰德峰缆车</span><span class="tc-meta">13:00预约</span></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">→Roques de García</span><span class="tc-meta">5min</span></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">夜间慢速下山</span><span class="tc-meta">50min</span></div></div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">The Ritz-Carlton Tenerife, Abama</div><div class="box tk"><div class="tk-h">🎫 Tickets</div><div class="tk-item">🔗 <a href="https://www.volcanoteide.com/en/cable_car" target="_blank">Teide 缆车</a></div><div class="tk-note">预约13:00或13:30时段缆车升顶，须提前1月预约。10月为观星旺季，票量紧张</div><div class="tk-item">🔗 <a href="https://www.volcanoteide.com/en/stargazing" target="_blank">Teide 日落观星团</a></div><div class="tk-note">专业向导领队，高倍望远镜观测银河与土星光环，肉眼可见繁星满天</div></div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">TF-38夜间无路灯无护栏，仅靠车灯，严禁超速。建议夜间下山速度不超40km/h</div><div class="tp-item">缆车与观星团均需提前1月预约，10月为观星旺季票量紧张。峰顶气温仅5°C，必备冲锋衣与抓绒衣</div></div></div>
 </div></div>
 <div class="card"><div class="card-top"><span class="dt">Oct 6 Tue</span><span class="wb">⛅ Tenerife N 20-26°C</span></div>
 <div class="grid">
 <div><div class="col-h">Itinerary</div><div class="tl">
-<div class="tl-item"><span class="tl-time">09:00</span><span class="tl-dot"></span><span class="tl-txt">专属小火车→阿巴玛隐秘海滩（Playa de Abama）踩沙</span></div>
-<div class="tl-item"><span class="tl-time">11:30</span><span class="tl-dot"></span><span class="tl-txt">退房，自驾北上穿越西侧山区前往北部</span></div>
-<div class="tl-item"><span class="tl-time">13:00</span><span class="tl-dot"></span><span class="tl-txt">加拉奇科古镇（Garachico）漫步，色彩斑斓的西班牙殖民街道</span></div>
-<div class="tl-item"><span class="tl-time">14:00</span><span class="tl-dot"></span><span class="tl-txt">埃尔卡拉通天然火山泳池（El Caletón）感受岩浆奇观，镇上享用海鲜饭</span></div>
-<div class="tl-item"><span class="tl-time">15:30</span><span class="tl-dot"></span><span class="tl-txt">自驾→特内里费北机场（TFN），预留2h应对山区路况</span></div>
-<div class="tl-item"><span class="tl-time">17:30</span><span class="tl-dot"></span><span class="tl-txt">Cepsa 加油加满 → Keddy 还车交钥匙</span></div>
-<div class="tl-item"><span class="tl-time">20:15</span><span class="tl-dot"></span><span class="tl-txt">VY3209 特内里费北（TFN）→ 巴塞罗那（BCN）</span></div>
-<div class="tl-item"><span class="tl-time">00:35+1</span><span class="tl-dot"></span><span class="tl-txt">抵达 BCN，打车→机场酒店入住</span></div>
-</div><div class="w-note">📌 古镇温和，山区可能多雾</div></div>
-<div><div class="col-h">Transport</div><div class="tc">自驾→TFN 2h<br>Cepsa加油→Keddy还车<br>VY3209 TFN 20:15→BCN 00:35+1<br>Taxi</div></div>
-<div><div class="col-h">Stay & Notes</div><div class="hc">BAH Barcelona Airport Hotel</div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">还车前在Cepsa加油加满，保留小票。山区返程可能遇雾，预留2小时余裕时间</div><div class="tp-item">北部山区道路弯多且易起雾，建议预留2小时。如遇大雾开雾灯、慢速行驶，尽量在天黑前抵达机场</div></div></div>
+<div class="tl-item"><span class="tl-time">09:30</span><span class="tl-dot"></span><span class="tl-txt">丽思卡尔顿早餐，11:00前办理退房，行李装车</span></div>
+<div class="tl-item"><span class="tl-time">11:00</span><span class="tl-dot"></span><span class="tl-txt">自驾穿越西侧<a href="https://www.google.com/maps/search/?api=1&query=TF-82+Tenerife" target="_blank">TF-82 盘山公路</a>前往北部，沿途欣赏火山地貌</span></div>
+<div class="tl-item"><span class="tl-time">12:15</span><span class="tl-dot"></span><span class="tl-txt">抵达<a href="https://www.google.com/maps/search/?api=1&query=Icod+de+los+Vinos" target="_blank">Icod de los Vinos 镇</a>，在<a href="https://www.google.com/maps/search/?api=1&query=Parque+del+Drago+Icod" target="_blank">龙血树公园（Parque del Drago）</a>打卡千年龙血树与远处泰德火山同框</span></div>
+<div class="tl-item"><span class="tl-time">12:45</span><span class="tl-dot"></span><span class="tl-txt">驱车约10min直达沿海的<a href="https://www.google.com/maps/search/?api=1&query=Garachico+Tenerife" target="_blank">加拉奇科（Garachico）</a></span></div>
+<div class="tl-item"><span class="tl-time">13:00</span><span class="tl-dot"></span><span class="tl-txt">漫步 Garachico 色彩斑斓的西班牙殖民风格街道与中心广场</span></div>
+<div class="tl-item"><span class="tl-time">14:00</span><span class="tl-dot"></span><span class="tl-txt">在<a href="https://www.google.com/maps/search/?api=1&query=El+Calet%C3%B3n+Garachico" target="_blank">El Caletón 天然火山泳池</a>感受岩浆冷却奇观，并在镇上享用午餐</span></div>
+<div class="tl-item"><span class="tl-time">16:00</span><span class="tl-dot"></span><span class="tl-txt">【红线时间】16:00 必须准时出发，沿 TF-5 高速前往<a href="https://www.google.com/maps/search/?api=1&query=Tenerife+North+Airport+TFN" target="_blank">特内里费北机场（TFN）</a>，预留充裕时间应对下午拥堵</span></div>
+<div class="tl-item"><span class="tl-time">16:30</span><span class="tl-dot"></span><span class="tl-txt">在机场附近<a href="https://www.google.com/maps/search/?api=1&query=Cepsa+gas+station+near+Tenerife+North+Airport" target="_blank">Cepsa 加油站</a>加满油（保留小票），前往 Keddy / Europcar 柜台办理还车</span></div>
+<div class="tl-item"><span class="tl-time">20:15</span><span class="tl-dot"></span><span class="tl-txt">搭乘 VY3209 航班飞往<a href="https://www.google.com/maps/search/?api=1&query=Barcelona+El+Prat+Airport" target="_blank">巴塞罗那机场（BCN）</a>，落地后打车前往机场酒店入住休息</span></div>
+</div><div class="w-note">📌 龙血树+古镇顺路，16:00红线必发</div></div>
+<div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">🚗 Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">TF-82盘山→Icod</span><span class="tc-meta">~1h15m</span></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">→Garachico</span><span class="tc-meta">10min</span></div><div class="tc-divider"></div><div class="tc-line"><span class="tc-emoji">🚗</span><span class="tc-txt">TF-5→TFN机场</span><span class="tc-meta">16:00发</span></div><div class="tc-line"><span class="tc-emoji">⛽</span><span class="tc-txt">Cepsa加油→Keddy还车</span><span class="tc-meta">16:30</span></div><div class="tc-divider"></div><div class="tc-line"><span class="tc-emoji">✈️</span><span class="tc-txt">VY3209 TFN→BCN</span><span class="tc-meta">20:15→00:35+1</span></div><div class="tc-line"><span class="tc-emoji">🚕</span><span class="tc-txt">Taxi→机场酒店</span></div></div></div></div>
+<div><div class="col-h">Stay & Notes</div><div class="hc">BAH Barcelona Airport Hotel</div><div class="box tp"><div class="tp-h">⚠️ Tips</div><div class="tp-item">还车前在Cepsa加油加满，保留小票。山区返程可能遇雾，预留2小时余裕时间</div><div class="tp-item">北部山区道路弯多且易起雾，建议预留2小时。如遇大雾开雾灯、慢速行驶，尽量在天黑前抵达机场</div><div class="tp-item">龙血树公园门票约5欧，可在旁边教堂广场免费观景台拍摄龙血树与泰德火山同框</div></div></div>
 </div></div>
 </div></div>
 </div>
@@ -265,7 +285,7 @@ a:hover{color:#FF6E00;text-decoration:underline}
 <div><div class="col-h">Itinerary</div><div class="tl">
 <div class="tl-item"><span class="tl-time">12:50</span><span class="tl-dot"></span><span class="tl-txt">乘返程航班飞回上海</span></div>
 </div><div class="w-note">📌 机场酒店休整，候机返程</div></div>
-<div><div class="col-h">Transport</div><div class="tc">CA840 BCN 12:50→PVG 07:25+1</div></div>
+<div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">✈️ Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">✈️</span><span class="tc-txt">CA840 BCN→PVG</span><span class="tc-meta">12:50→07:25+1</span></div></div></div></div>
 <div><div class="col-h">Stay & Notes</div><div class="hc">On the plane</div></div>
 </div></div>
 <div class="card"><div class="card-top"><span class="dt">Oct 8 Thu</span><span class="wb">☀️ 上海 15-22°C</span></div>
@@ -273,7 +293,7 @@ a:hover{color:#FF6E00;text-decoration:underline}
 <div><div class="col-h">Itinerary</div><div class="tl">
 <div class="tl-item"><span class="tl-time">07:25</span><span class="tl-dot"></span><span class="tl-txt">抵达上海浦东机场（PVG），行程圆满结束</span></div>
 </div><div class="w-note">📌 行程圆满结束</div></div>
-<div><div class="col-h">Transport</div><div class="tc">CA840 BCN 12:50→PVG 07:25+1</div></div>
+<div><div class="col-h">Transport</div><div class="tc-wrap"><div class="tc-header" onclick="toggleTransport(this)"><span class="tc-icon">✈️ Transport</span><span class="tc-arrow">▼</span></div><div class="tc-body"><div class="tc-line"><span class="tc-emoji">✈️</span><span class="tc-txt">CA840 BCN→PVG</span><span class="tc-meta">12:50→07:25+1</span></div></div></div></div>
 <div><div class="col-h">Stay & Notes</div><div class="hc">Home</div></div>
 </div></div>
 </div></div>
@@ -293,6 +313,10 @@ function showTab(i){
   tabs[i].classList.add('active');
   panels[i].classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
+}
+// Transport toggle
+function toggleTransport(el){
+  el.parentElement.classList.toggle('collapsed');
 }
 // Touch swipe for mobile
 var tsx=0;
